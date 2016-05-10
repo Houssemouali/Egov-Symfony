@@ -1,0 +1,16 @@
+back_officeback_fosuser:
+    resource: "@BackOfficebackBundle/Resources/config/routing/fosuser.yml"
+    prefix:   /fosuser
+
+back_officeback_demandeextrait:
+    resource: "@BackOfficebackBundle/Resources/config/routing/demandeextrait.yml"
+    prefix:   /demandeextrait
+
+back_officeback_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BackOfficebackBundle:Default:index }
+    
+back_officeback_extraitnaissance:
+    resource: "@BackOfficebackBundle/Resources/config/routing/ExtraitNaissance.yml"
+    prefix:   /extraitnaissance
+

@@ -1,0 +1,30 @@
+fosuser:
+    path:     /
+    defaults: { _controller: "BackOfficebackBundle:FosUser:index" }
+
+fosuser_show:
+    path:     /{id}/lock
+    defaults: { _controller: "BackOfficebackBundle:FosUser:block" }
+
+fosuser_new:
+    path:     /new
+    defaults: { _controller: "BackOfficebackBundle:FosUser:new" }
+
+fosuser_create:
+    path:     /create
+    defaults: { _controller: "BackOfficebackBundle:FosUser:create" }
+    methods:  POST
+
+fosuser_edit:
+    path:     /{id}/unlock
+    defaults: { _controller: "BackOfficebackBundle:FosUser:deblock" }
+
+fosuser_update:
+    path:     /{id}/update
+    defaults: { _controller: "BackOfficebackBundle:FosUser:update" }
+    methods:  [POST, PUT]
+
+fosuser_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackOfficebackBundle:FosUser:delete" }
+    methods:  [POST, DELETE]

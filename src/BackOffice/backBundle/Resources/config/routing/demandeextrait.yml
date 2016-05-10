@@ -1,0 +1,30 @@
+demandeextrait:
+    path:     /
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:index" }
+
+demandeextrait_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:show" }
+
+demandeextrait_new:
+    path:     /new
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:new" }
+
+demandeextrait_create:
+    path:     /create
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:create" }
+    methods:  POST
+
+demandeextrait_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:edit" }
+
+demandeextrait_update:
+    path:     /{id}/update
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:update" }
+    methods:  [POST, PUT]
+
+demandeextrait_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackOfficebackBundle:Demandeextrait:delete" }
+    methods:  [POST, DELETE]

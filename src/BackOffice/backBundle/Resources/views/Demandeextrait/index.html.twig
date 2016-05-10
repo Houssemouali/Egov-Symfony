@@ -1,0 +1,49 @@
+{% extends 'BackOfficebackBundle::Layout.html.twig' %}
+{% block body -%}
+    <h1>Demandeextrait list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Lieunaissance</th>
+                <th>Datenaissance</th>
+                
+                
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('demandeextrait_show', { 'id': entity.id }) }}">{{ entity.nom }}</a></td>
+                <td>{{ entity.prenom }}</td>
+                <td>{{ entity.lieuNaissance }}</td>
+                <td>{% if entity.dateNaissance %}{{ entity.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('back_officeback_extraitnaissance_create', { 'id': entity.id }) }}">Creer</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('demandeextrait_edit', { 'id': entity.id }) }}">Refuser</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('demandeextrait_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

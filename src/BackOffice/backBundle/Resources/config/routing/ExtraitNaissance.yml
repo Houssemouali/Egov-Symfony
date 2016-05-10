@@ -1,0 +1,22 @@
+back_officeback_extraitnaissance:
+    path:     /
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:index }
+back_officeback_extraitnaissance_edit:
+    path:     /{id}/edit
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:edit }
+back_officeback_extraitnaissance_new:
+    path:     /new
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:new }
+back_officeback_extraitnaissance_show:
+    path:     /{id}/show
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:show }
+back_officeback_extraitnaissance_create:
+    path:     /create
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:create }
+back_officeback_extraitnaissance_update:
+    path:     /{id}/update
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:update }
+back_officeback_extraitnaissance_delete:
+    path:     /{id}/delete
+    defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:update }
+

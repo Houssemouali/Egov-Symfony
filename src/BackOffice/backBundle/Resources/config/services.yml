@@ -1,0 +1,4 @@
+services:
+#    back_officeback.example:
+#        class: BackOffice\backBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,10 @@
+front_office_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FrontOfficeBundle:Default:index1 }
+front_office_new:
+    path:     /front/new
+    defaults: { _controller: FrontOfficeBundle:ExtraitNaissance2:new }
+front_office_list:
+    path:     /front/list
+    defaults: { _controller: FrontOfficeBundle:ExtraitNaissance2:new }
+    
