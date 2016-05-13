@@ -114,6 +114,7 @@ class DemandeextraitController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BackOfficebackBundle:Demandeextrait')->find($id);
+        $entity->setCommentaire("refusé");
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Demandeextrait entity.');
@@ -121,12 +122,13 @@ class DemandeextraitController extends Controller {
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
-
+        
         return $this->render('BackOfficebackBundle:Demandeextrait:edit.html.twig', array(
                     'entity' => $entity,
                     'edit_form' => $editForm->createView(),
                     'delete_form' => $deleteForm->createView(),
         ));
+        remove($entity);
     }
 
     /**

@@ -54,76 +54,62 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
                         <th>Nompere</th>
                         <th>Nommere</th>
                         <th>Etait civil</th>
-                        <th>Sex</th>
+                        <th>Sexe</th>
                         <th>Datenaissance</th>
                         <th>Adresse naissance</th>
                         <th>Id</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     ";
-        // line 38
+        // line 37
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 39
+            // line 38
             echo "                        <tr>
                             <td><a href=\"";
-            // line 40
+            // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nom", array()), "html", null, true);
             echo "</a></td>
                             <td>";
-            // line 41
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "prenom", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 42
+            // line 41
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "pere", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 43
+            // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "mere", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 44
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "etatCivile", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 45
+            // line 44
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "sexe", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 46
+            // line 45
             if ($this->getAttribute($context["entity"], "dateNaissance", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateNaissance", array()), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                             <td>";
-            // line 47
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "villeNaissance", array()), "html", null, true);
             echo "</td>
                             <td>";
-            // line 48
+            // line 47
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</td>
                             <td>
-                                <ul>
-                                    <li>
-                                        <a href=\"";
-            // line 52
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                                    </li>
-                                    <li>
-                                        <a href=\"";
-            // line 55
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                                    </li>
-                                </ul>
+                                
                             </td>
                         </tr>
                     ";
@@ -131,7 +117,7 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 53
         echo "                </tbody>
             </table>
                  </div>
@@ -139,14 +125,7 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
 \t</div><!--/span-->\t
 \t</div><!--/row-->
     <ul>
-        <li>
-            <a href=\"";
-        // line 69
-        echo $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_new");
-        echo "\">
-                Ajout d'un nouveau extrait de naissance 
-            </a>
-        </li>
+      
     </ul>
 ";
     }
@@ -163,7 +142,7 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
 
     public function getDebugInfo()
     {
-        return array (  145 => 69,  135 => 61,  123 => 55,  117 => 52,  110 => 48,  106 => 47,  100 => 46,  96 => 45,  92 => 44,  88 => 43,  84 => 42,  80 => 41,  74 => 40,  71 => 39,  67 => 38,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  121 => 53,  109 => 47,  105 => 46,  99 => 45,  95 => 44,  91 => 43,  87 => 42,  83 => 41,  79 => 40,  73 => 39,  70 => 38,  66 => 37,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'BackOfficebackBundle::Layout.html.twig' %}*/
@@ -195,11 +174,10 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
 /*                         <th>Nompere</th>*/
 /*                         <th>Nommere</th>*/
 /*                         <th>Etait civil</th>*/
-/*                         <th>Sex</th>*/
+/*                         <th>Sexe</th>*/
 /*                         <th>Datenaissance</th>*/
 /*                         <th>Adresse naissance</th>*/
 /*                         <th>Id</th>*/
-/*                         <th>Actions</th>*/
 /*                     </tr>*/
 /*                 </thead>*/
 /*                 <tbody>*/
@@ -215,14 +193,7 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
 /*                             <td>{{ entity.villeNaissance }}</td>*/
 /*                             <td>{{ entity.id }}</td>*/
 /*                             <td>*/
-/*                                 <ul>*/
-/*                                     <li>*/
-/*                                         <a href="{{ path('back_officeback_extraitnaissance_show', { 'id': entity.id }) }}">show</a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}">edit</a>*/
-/*                                     </li>*/
-/*                                 </ul>*/
+/*                                 */
 /*                             </td>*/
 /*                         </tr>*/
 /*                     {% endfor %}*/
@@ -233,11 +204,7 @@ class __TwigTemplate_9c7cdfe2fbe76bc11b93dfcff259de60061fe4970bd94ab127fd0432cb5
 /* 	</div><!--/span-->	*/
 /* 	</div><!--/row-->*/
 /*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('back_officeback_extraitnaissance_new') }}">*/
-/*                 Ajout d'un nouveau extrait de naissance */
-/*             </a>*/
-/*         </li>*/
+/*       */
 /*     </ul>*/
 /* {% endblock %}*/
 /* */

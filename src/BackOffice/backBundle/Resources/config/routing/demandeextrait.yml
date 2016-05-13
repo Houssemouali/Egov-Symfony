@@ -15,7 +15,7 @@ demandeextrait_create:
     defaults: { _controller: "BackOfficebackBundle:Demandeextrait:create" }
     methods:  POST
 
-demandeextrait_edit:
+back_demandeextrait_edit:
     path:     /{id}/edit
     defaults: { _controller: "BackOfficebackBundle:Demandeextrait:edit" }
 

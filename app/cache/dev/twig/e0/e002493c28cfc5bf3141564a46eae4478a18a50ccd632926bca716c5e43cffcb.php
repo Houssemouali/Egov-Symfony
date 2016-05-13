@@ -30,7 +30,7 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
         // line 4
         echo "<h1>FosUser list</h1>
 
-    <table class=\"records_list\">
+\t\t<table class=\"table table-striped table-bordered bootstrap-datatable datatable\">
         <thead>
             <tr>
                 <th>Username</th>
@@ -135,7 +135,7 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
 /* {% block body -%}*/
 /*     <h1>FosUser list</h1>*/
 /* */
-/*     <table class="records_list">*/
+/* 		<table class="table table-striped table-bordered bootstrap-datatable datatable">*/
 /*         <thead>*/
 /*             <tr>*/
 /*                 <th>Username</th>*/

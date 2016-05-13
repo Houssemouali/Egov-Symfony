@@ -34,7 +34,7 @@ class ExtraitNaissanceController extends Controller {
             'entities' => $entities,
         );
     }
-
+//back_officeback_extraitnaissance_create
     /**
      * Creates a new ExtraitNaissance entity.
      *
@@ -43,20 +43,22 @@ class ExtraitNaissanceController extends Controller {
      * @Template("BackOfficebackBundle:ExtraitNaissance:new.html.twig")
      */
     public function createAction($id) {
+        $em = $this->getDoctrine()->getManager();
         $entity = new Extraitnaissances();
-        $entity1= new Demandeextrait();
         $entity1 = $em->getRepository('BackOfficebackBundle:Demandeextrait')->find($id);
 
         $entity->setNom($entity1->getNom());
         $entity->setPrenom($entity1->getPrenom());
-       $cin = $em->getRepository('BackOfficebackBundle:Cin')->findOneBy(array('numCin'=>$entity1->get));
-        $entity->setMere($cin);
-        $cin = $em->getRepository('BackOfficebackBundle:Cin')->findOneBy(array('numCin'=>$request->get('pere')));
-        $entity->setCinPere($cin);
-        $entity->setSexe($entity1->get('sexe'));
-        $entity->setVilleNaissance($entity1->get('ville'));
-        $entity->setEtatCivile($entity1->get('etat'));
-        $entity->setDateNaissance($entity1->get('date'));
+        $entity->setMere($entity1->getCinMere()->getExtrait()->getNom());
+        $entity->setPere($entity1->getCinPere()->getExtrait()->getNom());
+        $entity->setSexe("homme");
+        $entity->setVilleNaissance($entity1->getLieuNaissance());
+        $entity->setEtatCivile($entity1->getEtat());
+        $entity->setDateNaissance($entity1->getDateNaissance());
+        
+        $em->persist($entity);
+        $em->flush();
+        
         return $this->render("BackOfficebackBundle:frontOffice:b3dem.html.twig");
 
 
@@ -96,21 +98,17 @@ class ExtraitNaissanceController extends Controller {
      */
     public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
+        
+        $entity1 = $em->getRepository('BackOfficebackBundle:Demandeextrait')->find($id);
+        
+        
+        $entity1->setCommentaire("refuse");
+        
+        
+        $em->persist($entity1);
+        $em->flush();
+         return $this->render("BackOfficebackBundle:frontOffice:b3dem.html.twig");
 
-        $entity = $em->getRepository('BackOfficebackBundle:Extraitnaissances')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find ExtraitNaissance entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('BackOfficebackBundle:ExtraitNaissance:edit.html.twig', array(
-                    'entity' => $entity,
-                    'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**

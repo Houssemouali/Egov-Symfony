@@ -27,11 +27,10 @@
                         <th>Nompere</th>
                         <th>Nommere</th>
                         <th>Etait civil</th>
-                        <th>Sex</th>
+                        <th>Sexe</th>
                         <th>Datenaissance</th>
                         <th>Adresse naissance</th>
                         <th>Id</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,14 +46,7 @@
                             <td>{{ entity.villeNaissance }}</td>
                             <td>{{ entity.id }}</td>
                             <td>
-                                <ul>
-                                    <li>
-                                        <a href="{{ path('back_officeback_extraitnaissance_show', { 'id': entity.id }) }}">show</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}">edit</a>
-                                    </li>
-                                </ul>
+                                
                             </td>
                         </tr>
                     {% endfor %}
@@ -65,10 +57,6 @@
 	</div><!--/span-->	
 	</div><!--/row-->
     <ul>
-        <li>
-            <a href="{{ path('back_officeback_extraitnaissance_new') }}">
-                Ajout d'un nouveau extrait de naissance 
-            </a>
-        </li>
+      
     </ul>
 {% endblock %}

@@ -1,0 +1,30 @@
+mariage:
+    path:     /
+    defaults: { _controller: "BackOfficebackBundle:Mariage:index" }
+
+mariage_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackOfficebackBundle:Mariage:show" }
+
+mariage_new:
+    path:     /new
+    defaults: { _controller: "BackOfficebackBundle:Mariage:new" }
+
+mariage_create:
+    path:     /create
+    defaults: { _controller: "BackOfficebackBundle:Mariage:create" }
+    methods:  POST
+
+mariage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackOfficebackBundle:Mariage:edit" }
+
+mariage_update:
+    path:     /{id}/update
+    defaults: { _controller: "BackOfficebackBundle:Mariage:update" }
+    methods:  [POST, PUT]
+
+mariage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackOfficebackBundle:Mariage:delete" }
+    methods:  [POST, DELETE]

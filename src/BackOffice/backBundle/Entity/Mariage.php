@@ -89,11 +89,11 @@ class Mariage
      * @param \BackOffice\backBundle\Entity\Cin $cinFemme
      * @return Mariage
      */
-    public function setCinFemme(\BackOffice\backBundle\Entity\Cin $cinFemme = null)
+    public function setCinFemme($cinFemme)
     {
-        $this->cinFemme = $cinFemme;
+      return   $this->cinFemme;
 
-        return $this;
+        
     }
 
     /**
@@ -112,11 +112,11 @@ class Mariage
      * @param \BackOffice\backBundle\Entity\Cin $cinHomme
      * @return Mariage
      */
-    public function setCinHomme(\BackOffice\backBundle\Entity\Cin $cinHomme = null)
+    public function setCinHomme($cinHomme)
     {
-        $this->cinHomme = $cinHomme;
+       return $this->cinHomme; 
 
-        return $this;
+         
     }
 
     /**

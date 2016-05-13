@@ -23,7 +23,7 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 
         <!-- start: Meta -->
         <meta charset=\"utf-8\">
-        <title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+        <title></title>
         <meta name=\"description\" content=\"Bootstrap Metro Dashboard\">
         <meta name=\"author\" content=\"Dennis Ji\">
         <meta name=\"keyword\" content=\"Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina\">
@@ -92,290 +92,10 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
                         <span class=\"icon-bar\"></span>
                         <span class=\"icon-bar\"></span>
                     </a>
-                    <a class=\"brand\" href=\"index.html\"><span>JANUX</span></a>
+                    <a class=\"brand\" href=\"index.html\"><span></span></a>
 
                     <!-- start: Header Menu -->
-                    <div class=\"nav-no-collapse header-nav\">
-                        <ul class=\"nav pull-right\">
-                            <li class=\"dropdown hidden-phone\">
-                                <a class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
-                                    <i class=\"icon-bell\"></i>
-                                    <span class=\"badge red\">
-                                        7 </span>
-                                </a>
-                                <ul class=\"dropdown-menu notifications\">
-                                    <li class=\"dropdown-menu-title\">
-                                        <span>You have 11 notifications</span>
-                                        <a href=\"#refresh\"><i class=\"icon-repeat\"></i></a>
-                                    </li>\t
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon blue\"><i class=\"icon-user\"></i></span>
-                                            <span class=\"message\">New user registration</span>
-                                            <span class=\"time\">1 min</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon green\"><i class=\"icon-comment-alt\"></i></span>
-                                            <span class=\"message\">New comment</span>
-                                            <span class=\"time\">7 min</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon green\"><i class=\"icon-comment-alt\"></i></span>
-                                            <span class=\"message\">New comment</span>
-                                            <span class=\"time\">8 min</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon green\"><i class=\"icon-comment-alt\"></i></span>
-                                            <span class=\"message\">New comment</span>
-                                            <span class=\"time\">16 min</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon blue\"><i class=\"icon-user\"></i></span>
-                                            <span class=\"message\">New user registration</span>
-                                            <span class=\"time\">36 min</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon yellow\"><i class=\"icon-shopping-cart\"></i></span>
-                                            <span class=\"message\">2 items sold</span>
-                                            <span class=\"time\">1 hour</span> 
-                                        </a>
-                                    </li>
-                                    <li class=\"warning\">
-                                        <a href=\"#\">
-                                            <span class=\"icon red\"><i class=\"icon-user\"></i></span>
-                                            <span class=\"message\">User deleted account</span>
-                                            <span class=\"time\">2 hour</span> 
-                                        </a>
-                                    </li>
-                                    <li class=\"warning\">
-                                        <a href=\"#\">
-                                            <span class=\"icon red\"><i class=\"icon-shopping-cart\"></i></span>
-                                            <span class=\"message\">New comment</span>
-                                            <span class=\"time\">6 hour</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon green\"><i class=\"icon-comment-alt\"></i></span>
-                                            <span class=\"message\">New comment</span>
-                                            <span class=\"time\">yesterday</span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"icon blue\"><i class=\"icon-user\"></i></span>
-                                            <span class=\"message\">New user registration</span>
-                                            <span class=\"time\">yesterday</span> 
-                                        </a>
-                                    </li>
-                                    <li class=\"dropdown-menu-sub-footer\">
-                                        <a>View all notifications</a>
-                                    </li>\t
-                                </ul>
-                            </li>
-                            <!-- start: Notifications Dropdown -->
-                            <li class=\"dropdown hidden-phone\">
-                                <a class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
-                                    <i class=\"icon-calendar\"></i>
-                                    <span class=\"badge red\">
-                                        5 </span>
-                                </a>
-                                <ul class=\"dropdown-menu tasks\">
-                                    <li class=\"dropdown-menu-title\">
-                                        <span>You have 17 tasks in progress</span>
-                                        <a href=\"#refresh\"><i class=\"icon-repeat\"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"header\">
-                                                <span class=\"title\">iOS Development</span>
-                                                <span class=\"percent\"></span>
-                                            </span>
-                                            <div class=\"taskProgress progressSlim red\">80</div> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"header\">
-                                                <span class=\"title\">Android Development</span>
-                                                <span class=\"percent\"></span>
-                                            </span>
-                                            <div class=\"taskProgress progressSlim green\">47</div> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"header\">
-                                                <span class=\"title\">ARM Development</span>
-                                                <span class=\"percent\"></span>
-                                            </span>
-                                            <div class=\"taskProgress progressSlim yellow\">32</div> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"header\">
-                                                <span class=\"title\">ARM Development</span>
-                                                <span class=\"percent\"></span>
-                                            </span>
-                                            <div class=\"taskProgress progressSlim greenLight\">63</div> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"header\">
-                                                <span class=\"title\">ARM Development</span>
-                                                <span class=\"percent\"></span>
-                                            </span>
-                                            <div class=\"taskProgress progressSlim orange\">80</div> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class=\"dropdown-menu-sub-footer\">View all tasks</a>
-                                    </li>\t
-                                </ul>
-                            </li>
-                            <!-- end: Notifications Dropdown -->
-                            <!-- start: Message Dropdown -->
-                            <li class=\"dropdown hidden-phone\">
-                                <a class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
-                                    <i class=\"icon-envelope\"></i>
-                                    <span class=\"badge red\">
-                                        4 </span>
-                                </a>
-                                <ul class=\"dropdown-menu messages\">
-                                    <li class=\"dropdown-menu-title\">
-                                        <span>You have 9 messages</span>
-                                        <a href=\"#refresh\"><i class=\"icon-repeat\"></i></a>
-                                    </li>\t
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"avatar\"><img src=\"";
-        // line 223
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/avatar.jpg"), "html", null, true);
-        echo "\" alt=\"Avatar\"></span>
-                                            <span class=\"header\">
-                                                <span class=\"from\">
-                                                    Dennis Ji
-                                                </span>
-                                                <span class=\"time\">
-                                                    6 min
-                                                </span>
-                                            </span>
-                                            <span class=\"message\">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                            </span>  
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"avatar\"><img src=\"";
-        // line 239
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/avatar.jpg"), "html", null, true);
-        echo "\" alt=\"Avatar\"></span>
-                                            <span class=\"header\">
-                                                <span class=\"from\">
-                                                    Dennis Ji
-                                                </span>
-                                                <span class=\"time\">
-                                                    56 min
-                                                </span>
-                                            </span>
-                                            <span class=\"message\">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                            </span>  
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"avatar\"><img src=\"";
-        // line 255
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/avatar.jpg"), "html", null, true);
-        echo "\" alt=\"Avatar\"></span>
-                                            <span class=\"header\">
-                                                <span class=\"from\">
-                                                    Dennis Ji
-                                                </span>
-                                                <span class=\"time\">
-                                                    3 hours
-                                                </span>
-                                            </span>
-                                            <span class=\"message\">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                            </span>  
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"avatar\"><img src=\"";
-        // line 271
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/avatar.jpg"), "html", null, true);
-        echo "\" alt=\"Avatar\"></span>
-                                            <span class=\"header\">
-                                                <span class=\"from\">
-                                                    Dennis Ji
-                                                </span>
-                                                <span class=\"time\">
-                                                    yesterday
-                                                </span>
-                                            </span>
-                                            <span class=\"message\">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                            </span>  
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#\">
-                                            <span class=\"avatar\"><img src=\"";
-        // line 287
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/avatar.jpg"), "html", null, true);
-        echo "\" alt=\"Avatar\"></span>
-                                            <span class=\"header\">
-                                                <span class=\"from\">
-                                                    Dennis Ji
-                                                </span>
-                                                <span class=\"time\">
-                                                    Jul 25, 2012
-                                                </span>
-                                            </span>
-                                            <span class=\"message\">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                            </span>  
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class=\"dropdown-menu-sub-footer\">View all messages</a>
-                                    </li>\t
-                                </ul>
-                            </li>
-
-                            <!-- start: User Dropdown -->
-                            <li class=\"dropdown\">
-                                <a class=\"btn dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
-                                    <i class=\"halflings-icon white user\"></i> Dennis Ji
-                                    <span class=\"caret\"></span>
-                                </a>
-                                <ul class=\"dropdown-menu\">
-                                    <li class=\"dropdown-menu-title\">
-                                        <span>Account Settings</span>
-                                    </li>
-                                    <li><a href=\"#\"><i class=\"halflings-icon user\"></i> Profile</a></li>
-                                    <li><a href=\"login.html\"><i class=\"halflings-icon off\"></i> Logout</a></li>
-                                </ul>
-                            </li>
-                            <!-- end: User Dropdown -->
-                        </ul>
-                    </div>
+                   
                     <!-- end: Header Menu -->
 
                 </div>
@@ -390,13 +110,19 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
                 <div id=\"sidebar-left\" class=\"span2\">
                     <div class=\"nav-collapse sidebar-nav\">
                         <ul class=\"nav nav-tabs nav-stacked main-menu\">
-                            <li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> Dashboard</span></a></li>\t
+                            <li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> </span></a></li>\t
                             <li><a href=\"";
-        // line 339
+        // line 74
         echo $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance");
         echo "\"><i class=\"icon-tasks\"></i><span class=\"hidden-tablet\"> ExtraitNaissance</span></a></li>
-                            <li><a href=\"tasks.html\"><i class=\"icon-tasks\"></i><span class=\"hidden-tablet\"> CIN</span></a></li>
-                            <li><a href=\"ui.html\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> UI Features</span></a></li>
+                            <li><a href=\"";
+        // line 75
+        echo $this->env->getExtension('routing')->getPath("demandeextrait");
+        echo "\"></i><span class=\"hidden-tablet\"> Demande des extraits</span></a></li>
+                            <li><a href=\"";
+        // line 76
+        echo $this->env->getExtension('routing')->getPath("fosuser");
+        echo "\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> Gestion des utilisateurs</span></a></li>
                             <li><a href=\"widgets.html\"><i class=\"icon-dashboard\"></i><span class=\"hidden-tablet\"> Widgets</span></a></li>
                             <li>
                                 <a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Dropdown</span><span class=\"label label-important\"> 3 </span></a>
@@ -437,12 +163,12 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
                             <a href=\"index.html\">Home</a> 
                             <i class=\"icon-angle-right\"></i>
                         </li>
-                        <li><a href=\"#\">Dashboard</a></li>
+                        <li><a href=\"#\"></a></li>
                     </ul>
                     ";
-        // line 384
+        // line 119
         $this->displayBlock('body', $context, $blocks);
-        // line 386
+        // line 121
         echo "                </div><!--/.fluid-container-->
 
                 <!-- end: Content -->
@@ -486,147 +212,147 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
         <!-- start: JavaScript-->
 
         <script src=\"";
-        // line 428
+        // line 163
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 429
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-migrate-1.0.0.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 431
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-ui-1.10.0.custom.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 433
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 435
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/modernizr.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 437
+        // line 172
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 439
+        // line 174
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.cookie.js"), "html", null, true);
         echo "\"></script>
 
         <script src='";
-        // line 441
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/fullcalendar.min.js"), "html", null, true);
         echo "'></script>
 
         <script src='";
-        // line 443
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.dataTables.min.js"), "html", null, true);
         echo "'></script>
 
         <script src=\"";
-        // line 445
+        // line 180
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/excanvas.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 446
+        // line 181
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 447
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 448
+        // line 183
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.stack.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 449
+        // line 184
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.resize.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 451
+        // line 186
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.chosen.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 453
+        // line 188
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.uniform.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 455
+        // line 190
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.cleditor.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 457
+        // line 192
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.noty.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 459
+        // line 194
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.elfinder.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 461
+        // line 196
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.raty.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 463
+        // line 198
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.iphone.toggle.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 465
+        // line 200
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 467
+        // line 202
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.gritter.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 469
+        // line 204
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.imagesloaded.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 471
+        // line 206
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.masonry.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 473
+        // line 208
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.knob.modified.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 475
+        // line 210
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 477
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/counter.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 479
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/retina.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 481
+        // line 216
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/custom.js"), "html", null, true);
         echo "\"></script>
         <!-- end: JavaScript-->
@@ -636,10 +362,10 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 ";
     }
 
-    // line 384
+    // line 119
     public function block_body($context, array $blocks = array())
     {
-        // line 385
+        // line 120
         echo "                    ";
     }
 
@@ -655,7 +381,7 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 
     public function getDebugInfo()
     {
-        return array (  643 => 385,  640 => 384,  630 => 481,  625 => 479,  620 => 477,  615 => 475,  610 => 473,  605 => 471,  600 => 469,  595 => 467,  590 => 465,  585 => 463,  580 => 461,  575 => 459,  570 => 457,  565 => 455,  560 => 453,  555 => 451,  550 => 449,  546 => 448,  542 => 447,  538 => 446,  534 => 445,  529 => 443,  524 => 441,  519 => 439,  514 => 437,  509 => 435,  504 => 433,  499 => 431,  494 => 429,  490 => 428,  446 => 386,  444 => 384,  396 => 339,  341 => 287,  322 => 271,  303 => 255,  284 => 239,  265 => 223,  76 => 37,  69 => 33,  62 => 29,  51 => 21,  47 => 20,  43 => 19,  39 => 18,  20 => 1,);
+        return array (  369 => 120,  366 => 119,  356 => 216,  351 => 214,  346 => 212,  341 => 210,  336 => 208,  331 => 206,  326 => 204,  321 => 202,  316 => 200,  311 => 198,  306 => 196,  301 => 194,  296 => 192,  291 => 190,  286 => 188,  281 => 186,  276 => 184,  272 => 183,  268 => 182,  264 => 181,  260 => 180,  255 => 178,  250 => 176,  245 => 174,  240 => 172,  235 => 170,  230 => 168,  225 => 166,  220 => 164,  216 => 163,  172 => 121,  170 => 119,  124 => 76,  120 => 75,  116 => 74,  76 => 37,  69 => 33,  62 => 29,  51 => 21,  47 => 20,  43 => 19,  39 => 18,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -664,7 +390,7 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /* */
 /*         <!-- start: Meta -->*/
 /*         <meta charset="utf-8">*/
-/*         <title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>*/
+/*         <title></title>*/
 /*         <meta name="description" content="Bootstrap Metro Dashboard">*/
 /*         <meta name="author" content="Dennis Ji">*/
 /*         <meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">*/
@@ -712,275 +438,10 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /*                         <span class="icon-bar"></span>*/
 /*                         <span class="icon-bar"></span>*/
 /*                     </a>*/
-/*                     <a class="brand" href="index.html"><span>JANUX</span></a>*/
+/*                     <a class="brand" href="index.html"><span></span></a>*/
 /* */
 /*                     <!-- start: Header Menu -->*/
-/*                     <div class="nav-no-collapse header-nav">*/
-/*                         <ul class="nav pull-right">*/
-/*                             <li class="dropdown hidden-phone">*/
-/*                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">*/
-/*                                     <i class="icon-bell"></i>*/
-/*                                     <span class="badge red">*/
-/*                                         7 </span>*/
-/*                                 </a>*/
-/*                                 <ul class="dropdown-menu notifications">*/
-/*                                     <li class="dropdown-menu-title">*/
-/*                                         <span>You have 11 notifications</span>*/
-/*                                         <a href="#refresh"><i class="icon-repeat"></i></a>*/
-/*                                     </li>	*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon blue"><i class="icon-user"></i></span>*/
-/*                                             <span class="message">New user registration</span>*/
-/*                                             <span class="time">1 min</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon green"><i class="icon-comment-alt"></i></span>*/
-/*                                             <span class="message">New comment</span>*/
-/*                                             <span class="time">7 min</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon green"><i class="icon-comment-alt"></i></span>*/
-/*                                             <span class="message">New comment</span>*/
-/*                                             <span class="time">8 min</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon green"><i class="icon-comment-alt"></i></span>*/
-/*                                             <span class="message">New comment</span>*/
-/*                                             <span class="time">16 min</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon blue"><i class="icon-user"></i></span>*/
-/*                                             <span class="message">New user registration</span>*/
-/*                                             <span class="time">36 min</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon yellow"><i class="icon-shopping-cart"></i></span>*/
-/*                                             <span class="message">2 items sold</span>*/
-/*                                             <span class="time">1 hour</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li class="warning">*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon red"><i class="icon-user"></i></span>*/
-/*                                             <span class="message">User deleted account</span>*/
-/*                                             <span class="time">2 hour</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li class="warning">*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon red"><i class="icon-shopping-cart"></i></span>*/
-/*                                             <span class="message">New comment</span>*/
-/*                                             <span class="time">6 hour</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon green"><i class="icon-comment-alt"></i></span>*/
-/*                                             <span class="message">New comment</span>*/
-/*                                             <span class="time">yesterday</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="icon blue"><i class="icon-user"></i></span>*/
-/*                                             <span class="message">New user registration</span>*/
-/*                                             <span class="time">yesterday</span> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li class="dropdown-menu-sub-footer">*/
-/*                                         <a>View all notifications</a>*/
-/*                                     </li>	*/
-/*                                 </ul>*/
-/*                             </li>*/
-/*                             <!-- start: Notifications Dropdown -->*/
-/*                             <li class="dropdown hidden-phone">*/
-/*                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">*/
-/*                                     <i class="icon-calendar"></i>*/
-/*                                     <span class="badge red">*/
-/*                                         5 </span>*/
-/*                                 </a>*/
-/*                                 <ul class="dropdown-menu tasks">*/
-/*                                     <li class="dropdown-menu-title">*/
-/*                                         <span>You have 17 tasks in progress</span>*/
-/*                                         <a href="#refresh"><i class="icon-repeat"></i></a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="header">*/
-/*                                                 <span class="title">iOS Development</span>*/
-/*                                                 <span class="percent"></span>*/
-/*                                             </span>*/
-/*                                             <div class="taskProgress progressSlim red">80</div> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="header">*/
-/*                                                 <span class="title">Android Development</span>*/
-/*                                                 <span class="percent"></span>*/
-/*                                             </span>*/
-/*                                             <div class="taskProgress progressSlim green">47</div> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="header">*/
-/*                                                 <span class="title">ARM Development</span>*/
-/*                                                 <span class="percent"></span>*/
-/*                                             </span>*/
-/*                                             <div class="taskProgress progressSlim yellow">32</div> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="header">*/
-/*                                                 <span class="title">ARM Development</span>*/
-/*                                                 <span class="percent"></span>*/
-/*                                             </span>*/
-/*                                             <div class="taskProgress progressSlim greenLight">63</div> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="header">*/
-/*                                                 <span class="title">ARM Development</span>*/
-/*                                                 <span class="percent"></span>*/
-/*                                             </span>*/
-/*                                             <div class="taskProgress progressSlim orange">80</div> */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a class="dropdown-menu-sub-footer">View all tasks</a>*/
-/*                                     </li>	*/
-/*                                 </ul>*/
-/*                             </li>*/
-/*                             <!-- end: Notifications Dropdown -->*/
-/*                             <!-- start: Message Dropdown -->*/
-/*                             <li class="dropdown hidden-phone">*/
-/*                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">*/
-/*                                     <i class="icon-envelope"></i>*/
-/*                                     <span class="badge red">*/
-/*                                         4 </span>*/
-/*                                 </a>*/
-/*                                 <ul class="dropdown-menu messages">*/
-/*                                     <li class="dropdown-menu-title">*/
-/*                                         <span>You have 9 messages</span>*/
-/*                                         <a href="#refresh"><i class="icon-repeat"></i></a>*/
-/*                                     </li>	*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="avatar"><img src="{{asset('BackOffice/img/avatar.jpg')}}" alt="Avatar"></span>*/
-/*                                             <span class="header">*/
-/*                                                 <span class="from">*/
-/*                                                     Dennis Ji*/
-/*                                                 </span>*/
-/*                                                 <span class="time">*/
-/*                                                     6 min*/
-/*                                                 </span>*/
-/*                                             </span>*/
-/*                                             <span class="message">*/
-/*                                                 Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore*/
-/*                                             </span>  */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="avatar"><img src="{{asset('BackOffice/img/avatar.jpg')}}" alt="Avatar"></span>*/
-/*                                             <span class="header">*/
-/*                                                 <span class="from">*/
-/*                                                     Dennis Ji*/
-/*                                                 </span>*/
-/*                                                 <span class="time">*/
-/*                                                     56 min*/
-/*                                                 </span>*/
-/*                                             </span>*/
-/*                                             <span class="message">*/
-/*                                                 Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore*/
-/*                                             </span>  */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="avatar"><img src="{{asset('BackOffice/img/avatar.jpg')}}" alt="Avatar"></span>*/
-/*                                             <span class="header">*/
-/*                                                 <span class="from">*/
-/*                                                     Dennis Ji*/
-/*                                                 </span>*/
-/*                                                 <span class="time">*/
-/*                                                     3 hours*/
-/*                                                 </span>*/
-/*                                             </span>*/
-/*                                             <span class="message">*/
-/*                                                 Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore*/
-/*                                             </span>  */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="avatar"><img src="{{asset('BackOffice/img/avatar.jpg')}}" alt="Avatar"></span>*/
-/*                                             <span class="header">*/
-/*                                                 <span class="from">*/
-/*                                                     Dennis Ji*/
-/*                                                 </span>*/
-/*                                                 <span class="time">*/
-/*                                                     yesterday*/
-/*                                                 </span>*/
-/*                                             </span>*/
-/*                                             <span class="message">*/
-/*                                                 Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore*/
-/*                                             </span>  */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <span class="avatar"><img src="{{asset('BackOffice/img/avatar.jpg')}}" alt="Avatar"></span>*/
-/*                                             <span class="header">*/
-/*                                                 <span class="from">*/
-/*                                                     Dennis Ji*/
-/*                                                 </span>*/
-/*                                                 <span class="time">*/
-/*                                                     Jul 25, 2012*/
-/*                                                 </span>*/
-/*                                             </span>*/
-/*                                             <span class="message">*/
-/*                                                 Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore*/
-/*                                             </span>  */
-/*                                         </a>*/
-/*                                     </li>*/
-/*                                     <li>*/
-/*                                         <a class="dropdown-menu-sub-footer">View all messages</a>*/
-/*                                     </li>	*/
-/*                                 </ul>*/
-/*                             </li>*/
-/* */
-/*                             <!-- start: User Dropdown -->*/
-/*                             <li class="dropdown">*/
-/*                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">*/
-/*                                     <i class="halflings-icon white user"></i> Dennis Ji*/
-/*                                     <span class="caret"></span>*/
-/*                                 </a>*/
-/*                                 <ul class="dropdown-menu">*/
-/*                                     <li class="dropdown-menu-title">*/
-/*                                         <span>Account Settings</span>*/
-/*                                     </li>*/
-/*                                     <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>*/
-/*                                     <li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>*/
-/*                                 </ul>*/
-/*                             </li>*/
-/*                             <!-- end: User Dropdown -->*/
-/*                         </ul>*/
-/*                     </div>*/
+/*                    */
 /*                     <!-- end: Header Menu -->*/
 /* */
 /*                 </div>*/
@@ -995,10 +456,10 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /*                 <div id="sidebar-left" class="span2">*/
 /*                     <div class="nav-collapse sidebar-nav">*/
 /*                         <ul class="nav nav-tabs nav-stacked main-menu">*/
-/*                             <li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	*/
+/*                             <li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> </span></a></li>	*/
 /*                             <li><a href="{{ path('back_officeback_extraitnaissance') }}"><i class="icon-tasks"></i><span class="hidden-tablet"> ExtraitNaissance</span></a></li>*/
-/*                             <li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> CIN</span></a></li>*/
-/*                             <li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>*/
+/*                             <li><a href="{{ path('demandeextrait') }}"></i><span class="hidden-tablet"> Demande des extraits</span></a></li>*/
+/*                             <li><a href="{{ path('fosuser') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Gestion des utilisateurs</span></a></li>*/
 /*                             <li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>*/
 /*                             <li>*/
 /*                                 <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>*/
@@ -1039,7 +500,7 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /*                             <a href="index.html">Home</a> */
 /*                             <i class="icon-angle-right"></i>*/
 /*                         </li>*/
-/*                         <li><a href="#">Dashboard</a></li>*/
+/*                         <li><a href="#"></a></li>*/
 /*                     </ul>*/
 /*                     {% block body %}*/
 /*                     {% endblock %}*/

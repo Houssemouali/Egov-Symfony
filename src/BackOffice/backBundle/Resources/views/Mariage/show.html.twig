@@ -1,0 +1,32 @@
+{% extends 'BackOfficebackBundle::Layout.html.twig' %}
+
+{% block body -%}
+    <h1>Mariage</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Datemariage</th>
+                <td>{{ entity.dateMariage|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('mariage') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('mariage_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'BackOfficebackBundle::Layout.html.twig' %}
+
+{% block body -%}
+    <h1>Mariage creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('mariage') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

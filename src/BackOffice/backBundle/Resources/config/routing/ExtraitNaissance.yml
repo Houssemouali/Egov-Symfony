@@ -11,7 +11,7 @@ back_officeback_extraitnaissance_show:
     path:     /{id}/show
     defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:show }
 back_officeback_extraitnaissance_create:
-    path:     /create
+    path:     /{id}/create
     defaults: { _controller: BackOfficebackBundle:ExtraitNaissance:create }
 back_officeback_extraitnaissance_update:
     path:     /{id}/update

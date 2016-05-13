@@ -150,7 +150,72 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'my_app_user_homepage',);
         }
 
+        // my_app_user_home
+        if ($pathinfo === '/login2/reg') {
+            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::loginInscAction',  '_route' => 'my_app_user_home',);
+        }
+
         if (0 === strpos($pathinfo, '/back')) {
+            if (0 === strpos($pathinfo, '/back/mariage')) {
+                // mariage
+                if (rtrim($pathinfo, '/') === '/back/mariage') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'mariage');
+                    }
+
+                    return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::indexAction',  '_route' => 'mariage',);
+                }
+
+                // mariage_show
+                if (preg_match('#^/back/mariage/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'mariage_show')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::showAction',));
+                }
+
+                // mariage_new
+                if ($pathinfo === '/back/mariage/new') {
+                    return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::newAction',  '_route' => 'mariage_new',);
+                }
+
+                // mariage_create
+                if ($pathinfo === '/back/mariage/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_mariage_create;
+                    }
+
+                    return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::createAction',  '_route' => 'mariage_create',);
+                }
+                not_mariage_create:
+
+                // mariage_edit
+                if (preg_match('#^/back/mariage/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'mariage_edit')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::editAction',));
+                }
+
+                // mariage_update
+                if (preg_match('#^/back/mariage/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_mariage_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'mariage_update')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::updateAction',));
+                }
+                not_mariage_update:
+
+                // mariage_delete
+                if (preg_match('#^/back/mariage/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_mariage_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'mariage_delete')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\MariageController::deleteAction',));
+                }
+                not_mariage_delete:
+
+            }
+
             if (0 === strpos($pathinfo, '/back/fosuser')) {
                 // fosuser
                 if (rtrim($pathinfo, '/') === '/back/fosuser') {
@@ -242,9 +307,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_demandeextrait_create:
 
-                // demandeextrait_edit
+                // back_demandeextrait_edit
                 if (preg_match('#^/back/demandeextrait/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'demandeextrait_edit')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\DemandeextraitController::editAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'back_demandeextrait_edit')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\DemandeextraitController::editAction',));
                 }
 
                 // demandeextrait_update
@@ -302,8 +367,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 // back_officeback_extraitnaissance_create
-                if ($pathinfo === '/back/extraitnaissance/create') {
-                    return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\ExtraitNaissanceController::createAction',  '_route' => 'back_officeback_extraitnaissance_create',);
+                if (preg_match('#^/back/extraitnaissance/(?P<id>[^/]++)/create$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'back_officeback_extraitnaissance_create')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\ExtraitNaissanceController::createAction',));
                 }
 
                 // back_officeback_extraitnaissance_update

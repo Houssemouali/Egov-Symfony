@@ -27,10 +27,14 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        // line 3
+        // line 5
         echo "<h1>Demandeextrait list</h1>
+    
+                <div class=\"row-fluid sortable\">\t\t
 
-    <table class=\"records_list\">
+               <table class=\"records_list\">
+
+\t\t<table class=\"table table-striped table-bordered bootstrap-datatable datatable\">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -45,49 +49,49 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 25
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 20
+            // line 26
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("demandeextrait_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nom", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 22
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "prenom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 23
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "lieuNaissance", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
+            // line 30
             if ($this->getAttribute($context["entity"], "dateNaissance", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateNaissance", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 
                 <td>";
-            // line 26
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</td>
                 <td>
                 <ul>
                     <li>
                         <a href=\"";
-            // line 30
+            // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_create", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Creer</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("demandeextrait_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">Refuser</a>
                     </li>
                 </ul>
@@ -98,14 +102,15 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 45
         echo "        </tbody>
     </table>
+            </div>\t\t
 
         <ul>
         <li>
             <a href=\"";
-        // line 44
+        // line 51
         echo $this->env->getExtension('routing')->getPath("demandeextrait_new");
         echo "\">
                 Create a new entry
@@ -127,14 +132,20 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
 
     public function getDebugInfo()
     {
-        return array (  109 => 44,  102 => 39,  90 => 33,  84 => 30,  77 => 26,  70 => 24,  66 => 23,  62 => 22,  56 => 21,  53 => 20,  49 => 19,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  114 => 51,  106 => 45,  94 => 39,  88 => 36,  81 => 32,  74 => 30,  70 => 29,  66 => 28,  60 => 27,  57 => 26,  53 => 25,  31 => 5,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends 'BackOfficebackBundle::Layout.html.twig' %}*/
 /* {% block body -%}*/
-/*     <h1>Demandeextrait list</h1>*/
+/*     */
 /* */
-/*     <table class="records_list">*/
+/*     <h1>Demandeextrait list</h1>*/
+/*     */
+/*                 <div class="row-fluid sortable">		*/
+/* */
+/*                <table class="records_list">*/
+/* */
+/* 		<table class="table table-striped table-bordered bootstrap-datatable datatable">*/
 /*         <thead>*/
 /*             <tr>*/
 /*                 <th>Nom</th>*/
@@ -162,7 +173,7 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
 /*                         <a href="{{ path('back_officeback_extraitnaissance_create', { 'id': entity.id }) }}">Creer</a>*/
 /*                     </li>*/
 /*                     <li>*/
-/*                         <a href="{{ path('demandeextrait_edit', { 'id': entity.id }) }}">Refuser</a>*/
+/*                         <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}">Refuser</a>*/
 /*                     </li>*/
 /*                 </ul>*/
 /*                 </td>*/
@@ -170,6 +181,7 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
 /*         {% endfor %}*/
 /*         </tbody>*/
 /*     </table>*/
+/*             </div>		*/
 /* */
 /*         <ul>*/
 /*         <li>*/

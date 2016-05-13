@@ -10,4 +10,13 @@ class DefaultController extends Controller
     {
         return $this->render('MyAppUserBundle:Default:index.html.twig', array());
     }
+    
+    
+    
+    
+    
+ public function loginInscAction(){
+        
+        return $this->render('MyAppUserBundle:Default:loginInscription.html.twig');
+    }
 }

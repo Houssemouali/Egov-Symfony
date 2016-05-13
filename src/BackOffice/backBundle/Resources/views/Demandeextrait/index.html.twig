@@ -1,8 +1,14 @@
 {% extends 'BackOfficebackBundle::Layout.html.twig' %}
 {% block body -%}
-    <h1>Demandeextrait list</h1>
+    
 
-    <table class="records_list">
+    <h1>Demandeextrait list</h1>
+    
+                <div class="row-fluid sortable">		
+
+               <table class="records_list">
+
+		<table class="table table-striped table-bordered bootstrap-datatable datatable">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -30,7 +36,7 @@
                         <a href="{{ path('back_officeback_extraitnaissance_create', { 'id': entity.id }) }}">Creer</a>
                     </li>
                     <li>
-                        <a href="{{ path('demandeextrait_edit', { 'id': entity.id }) }}">Refuser</a>
+                        <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}">Refuser</a>
                     </li>
                 </ul>
                 </td>
@@ -38,6 +44,7 @@
         {% endfor %}
         </tbody>
     </table>
+            </div>		
 
         <ul>
         <li>

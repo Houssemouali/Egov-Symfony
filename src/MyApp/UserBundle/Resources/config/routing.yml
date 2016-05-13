@@ -3,4 +3,6 @@ my_app_user_homepage:
     defaults: { _controller: MyAppUserBundle:Default:index }
 fos_user:
  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
+my_app_user_home:
+    path:     /login2/reg
+    defaults: { _controller: MyAppUserBundle:Default:loginInsc }

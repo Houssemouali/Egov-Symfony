@@ -1,3 +1,7 @@
+back_officeback_mariage:
+    resource: "@BackOfficebackBundle/Resources/config/routing/mariage.yml"
+    prefix:   /mariage
+
 back_officeback_fosuser:
     resource: "@BackOfficebackBundle/Resources/config/routing/fosuser.yml"
     prefix:   /fosuser
