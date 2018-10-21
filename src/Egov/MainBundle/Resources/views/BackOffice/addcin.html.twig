@@ -1,0 +1,35 @@
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+{%block body %}
+<html>
+    <body>
+        <h1>Ajout d'une Carte Identité Nationale</h1>
+<form method="POST">
+    
+    <label for="nom">Nom</label>
+    <input type="text" name="nom"/>
+    
+    <label for="prenom">Prenom</label>
+    <input type="text" name="prenom"/>
+    
+    <label for="Profession">Profession</label>
+    <input type="text" name="Profession"/>
+    
+    <label for="Adresse">Adresse</label>
+    <input type="text" name="Adresse"/>
+    
+    <label for="Cin">Carte Identité Nationale</label>
+    <input type="number" name="Cin"/>
+    
+    
+    <label for="lieucreation">Lieu de Creation</label>
+    <input type="text" name="lieucreation"/>
+    
+    
+    
+    <p>
+    
+    <input type="submit" value="AJOUTER" />
+</form>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,133 @@
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+
+{%block body %} 
+                                  
+<html>
+    <body>
+        
+            
+	
+	<table class="table table-bordered table-striped table-condensed table-hover">
+            <!--/table table-bordered table-striped table-condensedtable-hover!-->
+            <thead>
+            <tr>
+                <td class="center">{{knp_pagination_sortable(pagination, '', 'a.id') }}<b>Numéro d'Identification</b></td>
+    <td align="center"{% if pagination.isSorted('a.extrait.nom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.extrait.nom') }}<b>Nom</b></td>
+    <td class="center"{% if pagination.isSorted('a.extrait.prenom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.extrait.prenom') }}<b>Prenom</b></td>
+    <td class="center"{% if pagination.isSorted('a.adresse') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.adresse') }}<b>Adresse<b></td>
+    <td class="center"{% if pagination.isSorted('a.profession') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.profession') }}<b>Profession<b></td>
+    <td class="center"{% if pagination.isSorted('a.lieuCreation') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.lieuCreation') }}<b>Lieu de Creation<b></td>
+    <td class="center"{% if pagination.isSorted('a.dateCreation') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.dateCreation') }}<b>Date de Creation</b></td>
+    <td><b>Action</b></td>
+     
+    
+</tr>
+	    </thead>   
+             <tbody>
+                {% for cin in pagination %}
+                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    <td class="center">{{cin.id}}</td>
+                    <td class="center">{{cin.extrait.nom}}</td>
+                    <td class="center">{{cin.extrait.prenom}}</td>
+                        <td class="center">{{cin.adresse}}</td>
+                      <td class="center">{{cin.profession}}</td>
+                      <td class="center">{{cin.lieuCreation}}</td>
+                       <td class="center">{{cin.dateCreation|date('d/m/Y')}}</td>
+                        <td class="center"><a class="btn btn-danger" href="{{ path('egov_Back_suppCin',{'id':cin.id}) }}" target="_blank"><i class="halflings-icon white trash"></i> </a>
+                       
+                       
+                            <table border="2">
+                                
+                            </table>
+                                
+                    <a class="btn btn-success" href="#" data-target="#myModal" data-id="{{cin.id}}" data-adresse="{{cin.adresse}}" data-profession="{{cin.profession}}">
+                            <i class="halflings-icon white zoom-in"></i>   
+                        </a>
+                    </td>
+                       
+                    </tr>
+						  </tbody>
+                  
+                  
+                    {%endfor%}
+          
+        </table>
+                    
+       <div class="modal fade hide" id="myModal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Settings</h3>
+            <li><a href="{{ path('logout') }}"><i class="icon-angle-right"></i><span class="hidden-tablet"> Logout</span></a></li>
+
+		</div>
+		<div class="modal-body">
+                    <form id="form">
+                        <input id="ipt-id" name="ipt-id" type="hidden"/>
+                        <label>Adresse </label><select name="ipt-adresse" id="ipt-adresse" type="text" >
+                            <option value="Tunis">Tunis</option>
+                            <option value="Ben arous">Ben Arous</option>
+                            <option value="Mannouba">Manouba</option>
+
+                        </select>
+                      
+                        <label>Profession </label><input name="ipt-profession" id="ipt-profession" type="text"/>
+                    </form>
+                    
+                       
+                    
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+			<a href="#" class="btn btn-primary" id="save_btn">Save changes</a>
+		</div>
+	</div>
+            <div class="clearfix"></div>
+            <span style="z-index: 100;position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);" id="loading"></span>
+        <div class="navigation">
+		 {{ knp_pagination_render(pagination) }}
+        </div>			
+ 
+    <li><a href="#">Dashboard</a></li>
+    </body>
+</html>
+
+{% endblock %}
+{% block javascript %}
+    <script language="javascript" type="text/javascript">
+    $(function() { 
+        var current_item=null;
+        $('.btn-success').click(function(e){
+		e.preventDefault();
+                //recuperer id
+                $("#ipt-id").val($(this).data("id"));
+                $("#ipt-adresse").val($(this).data("adresse"));
+                 $("#ipt-profession").val($(this).data("profession"));
+		$('#myModal').modal('show');
+                current_item=this;
+	});
+       
+        $('#save_btn').click(function(e){
+            e.preventDefault();
+             $("#loading").html('<img src="{{ asset('bundles/egovmainbundle/img/loader.gif') }}" align="absmiddle">&nbsp;Enregistrement...');
+            $.ajax({
+                    type: "POST",
+                    url: "{{path('cin_update')}}",
+                    data: $('#form').serialize(),
+                    success: function (data){
+                        $('#myModal').modal('hide');
+                        $('#loading').html("");
+                        $(current_item).data("id",$("#ipt-id").val());
+                        $(current_item).data("adresse",$("#ipt-adresse").val());
+                        $(current_item).data("profession",$("#ipt-profession").val());
+                        current_item = null;
+                    },
+                    error: function (e) {
+                         console.log(e.responseText);
+                         $('#loading').html("");
+                         current_item=null;
+                    }
+              });
+        });
+    });
+</script>    
+    {% endblock %}

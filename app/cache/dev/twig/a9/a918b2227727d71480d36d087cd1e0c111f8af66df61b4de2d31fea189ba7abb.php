@@ -7,28 +7,23 @@ class __TwigTemplate_003788676b45b92f5647cb7a55c51edcd8209cdfd21d12837ddcc6968ef
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Registration:register.html.twig", 1);
+        $this->parent = false;
+
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
     }
 
-    protected function doGetParent(array $context)
-    {
-        return "FOSUserBundle::layout.html.twig";
-    }
-
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        $this->displayBlock('fos_user_content', $context, $blocks);
     }
 
-    // line 3
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 4
-        $this->loadTemplate("FOSUserBundle:Registration:register_content.html.twig", "FOSUserBundle:Registration:register.html.twig", 4)->display($context);
+        // line 2
+        $this->loadTemplate("FOSUserBundle:Registration:register_content.html.twig", "FOSUserBundle:Registration:register.html.twig", 2)->display($context);
     }
 
     public function getTemplateName()
@@ -36,18 +31,11 @@ class __TwigTemplate_003788676b45b92f5647cb7a55c51edcd8209cdfd21d12837ddcc6968ef
         return "FOSUserBundle:Registration:register.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,  11 => 1,);
+        return array (  26 => 2,  20 => 1,);
     }
 }
-/* {% extends "FOSUserBundle::layout.html.twig" %}*/
-/* */
 /* {% block fos_user_content %}*/
 /* {% include "FOSUserBundle:Registration:register_content.html.twig" %}*/
 /* {% endblock fos_user_content %}*/

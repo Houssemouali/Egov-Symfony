@@ -1,0 +1,9 @@
+demande_cpp_front:
+    path:     /CPPfront
+    defaults: { _controller: "CompteCPBundle:DemandeFront:indexCPP" }
+demande_cin_front:
+    path:     /Cinfront
+    defaults: { _controller: "CompteCPBundle:DemandeFront:indexCin" }
+demande_b3_front:
+    path:     /b3front
+    defaults: { _controller: "CompteCPBundle:DemandeFront:indexB3" }

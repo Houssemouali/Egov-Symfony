@@ -1,0 +1,61 @@
+{# empty Twig template #}
+{# empty Twig template #}
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+{%block body %} 
+                                  
+<html>
+    <body>
+        <div class="row-fluid sortable">	
+	<div class="box span12">
+	<div class="box-header" data-original-title>
+	<h2><i class="icon-bolt"></i><span class="break"></span>Factures STEG </h2>
+	<div class="box-icon">
+	<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+	<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+	<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+	</div>
+	</div>
+            
+	<div class="box-content">
+	<table class="table table-bordered table-striped table-condensed table-hover datatable bootstrap-datable">
+            <!--/table table-bordered table-striped table-condensedtable-hover!-->
+            <thead>
+            <tr>
+                <td class="center">{{knp_pagination_sortable(pagination, '', 'a.id') }}<b>Numéro d'Identification</b></td>
+    <td class="center"{% if pagination.isSorted('a.cin') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.cin') }}<b>Carte d'Identité Nationale</b></td>
+   
+    <td class="center"{% if pagination.isSorted('a.Type') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.Type') }}<b>Type<b></td>
+    <td class="center"{% if pagination.isSorted('a.PayerAvant') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.PayerAvant') }}<b>Payer Avant le</b></td>
+    <td><b>Montant<b></td>
+    <td><b>Supprimer<b></td>
+</tr>
+	    </thead>   
+             <tbody>
+                {% for auto in pagination %}
+                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    <td class="center">{{auto.id}}</td>
+                    <td class="center">{{auto.cin.numCin}}</td>
+                    
+                      <td class="center">{{auto.Type}}</td>
+                       <td class="center">{{auto.PayerAvant|date('d/m/Y')}}</td>
+                       <td class="center">{{auto.Montant}}</td>
+                        <td class="center"><a class="btn btn-danger" href="{{ path('egov_Back_suppFac',{'id':auto.id}) }}" target="_blank"><i class="halflings-icon white trash"></i> </a></td>
+                       
+                    </tr>
+						  </tbody>
+                  
+                   
+                    {%endfor%}
+          
+        </table>
+       
+        <div class="navigation">
+		 {{ knp_pagination_render(pagination) }}
+        </div>			
+</div>  
+</div><!--/span-->
+</div><!--/row-->
+    </body>
+</html>
+
+{% endblock %}

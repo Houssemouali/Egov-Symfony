@@ -1,0 +1,24 @@
+{%extends "InterCinBundle:Mail:page4.html.twig"%}
+{%block body %} 
+                
+<form role="form" id="fr" method="POST" action="/symfonyEgov/web/app_dev.php/sendmail">
+<div id="Mail">
+    <div class="form-group">
+        
+        <label for="Mail_nom" class="required">
+            Nom</label>
+        <input type="text" id="Mail_nom" name="Mail[nom]" required="required" class="form-control" placeholder="Nom*"></div>
+        
+    <div class="form-group"> <label for="Mail_prenom" class="required">Prenom</label>
+        
+        <input type="text" id="Mail_prenom" name="Mail[prenom]" required="required" class="form-control" placeholder="Prenom*"></div>
+    <div class="form-group"><label for="Mail_tel" class="required">Tel</label>
+        <input type="number" id="Mail_tel" name="Mail[tel]" required="required" class="form-control" placeholder="Telephone*"></div>
+    <div class="form-group"><label for="Mail_fromm" class="required">From</label>
+        <input type="email" id="Mail_fromm" name="Mail[fromm]" required="required" class="form-control" placeholder="De*"></div>
+    <div class="form-group">                <label for="Mail_text" class="required">Text</label>
+        <textarea class="form-control" id="Mail_text" name="Mail[text]" required="required"> </textarea></div>
+    <input type="hidden" id="Mail__token" name="Mail[_token]" value="wE9PLs1aumAFxcqg-M8Zyk1zcMwVDgW8jwLliqINvoE"></div>
+<div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">ENVOYEZ LE MAIL</button></div>
+</form>
+    {% endblock %}

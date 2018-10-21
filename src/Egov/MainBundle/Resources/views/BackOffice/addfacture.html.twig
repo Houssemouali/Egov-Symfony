@@ -1,0 +1,39 @@
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+{%block body %}
+<html>
+    <body>
+    <center><h1><b>Ajout d'une Facture</b></h1>
+         <br>
+        <br>
+<form method="POST">
+    <label for="cin">Carte d'identité nationale</label>
+    <input type="number" name="cin" placeholder=""/>
+     <br>
+        <br>
+   
+    
+    <label for="Type"> Type </label><select name="Type"  type="text" >
+                            <option value="STEG">STEG</option>
+                            <option value="SONEDE">SONEDE</option></select>
+                             
+                   <br>
+        <br>                                  
+     <label for="Montant">Montant</label>
+    <input type="number" name="Montant"/>
+     <br>
+        <br>
+    <label for="etat">Etat </label><select name="etat"  type="text" >
+                            <option value="NonPayee">NonPayée</option></select>
+     <br>
+        <br>
+     
+        <br>
+        <br>
+        <input class="btn btn-large btn-info" type="submit" value="AJOUTER FACTURE"/>
+    
+</form>
+        </center>
+    </body>
+</html>
+{% endblock %}
+

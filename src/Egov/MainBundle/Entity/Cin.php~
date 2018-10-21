@@ -1,0 +1,84 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cin
+ *
+ * @ORM\Table(name="cin", indexes={@ORM\Index(name="extrait", columns={"extrait"})})
+ * @ORM\Entity
+ */
+class Cin
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=50, nullable=false)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profession", type="string", length=50, nullable=false)
+     */
+    private $profession;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu_creation", type="string", length=50, nullable=false)
+     */
+    private $lieuCreation;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation", type="date", nullable=false)
+     */
+    private $dateCreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=500, nullable=true)
+     */
+    private $photo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="empreinte", type="string", length=500, nullable=true)
+     */
+    private $empreinte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_cin", type="string", length=8, nullable=false)
+     */
+    private $numCin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Extraitnaissances
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Extraitnaissances")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="extrait", referencedColumnName="id")
+     * })
+     */
+    private $extrait;
+
+
+}

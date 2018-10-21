@@ -1,6 +1,6 @@
 <?php
 
-/* SensioDistributionBundle::Configurator/steps.html.twig */
+/* SensioDistributionBundle:Configurator:steps.html.twig */
 class __TwigTemplate_ec8f81bced467195d8c684c3f4a512f4b17346778a652019893b2dd5e8f7dc81 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -61,7 +61,7 @@ class __TwigTemplate_ec8f81bced467195d8c684c3f4a512f4b17346778a652019893b2dd5e8f
 
     public function getTemplateName()
     {
-        return "SensioDistributionBundle::Configurator/steps.html.twig";
+        return "SensioDistributionBundle:Configurator:steps.html.twig";
     }
 
     public function isTraitable()

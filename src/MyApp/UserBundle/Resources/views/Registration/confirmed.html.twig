@@ -1,9 +1,9 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+{% extends "MyAppUserBundle:Default:loginInscription.html.twig" %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <p>Votre compte est deja crée , Attendez l'activation de la part de l'administrateur</p>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}

@@ -1,4 +1,5 @@
 services:
-#    back_officeback.example:
-#        class: BackOffice\backBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    redirect.after.login:
+        class: MyApp\UserBundle\Redirection\AfterLoginRedirection
+        arguments: [@router]
+

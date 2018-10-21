@@ -1,0 +1,73 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Autorisationcirculation
+ *
+ * @ORM\Table(name="autorisationcirculation", indexes={@ORM\Index(name="user", columns={"cin"}), @ORM\Index(name="cpp", columns={"cpp"})})
+ * @ORM\Entity
+ */
+class Autorisationcirculation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CarteGrise", type="integer", nullable=false)
+     */
+    private $cartegrise;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FinAutorisation", type="date", nullable=false)
+     */
+    private $finautorisation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=50, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=100, nullable=true)
+     */
+    private $commentaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin", referencedColumnName="id")
+     * })
+     */
+    private $cin;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Compte
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Compte")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cpp", referencedColumnName="id")
+     * })
+     */
+    private $cpp;
+
+
+}

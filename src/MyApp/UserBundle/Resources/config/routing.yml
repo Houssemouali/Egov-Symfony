@@ -6,3 +6,8 @@ fos_user:
 my_app_user_home:
     path:     /login2/reg
     defaults: { _controller: MyAppUserBundle:Default:loginInsc }
+logout:
+    pattern: /logout
+#honorata_photo_gallery:
+ #   resource: "@BackOfficebackBundle/Resources/config/routing.yml"
+  #  prefix:   /demandeextrait

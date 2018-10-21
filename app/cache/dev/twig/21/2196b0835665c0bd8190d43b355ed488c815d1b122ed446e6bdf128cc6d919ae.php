@@ -34,20 +34,26 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
         <!-- end: Mobile Specific -->
 
         <!-- start: CSS -->
+        
         <link id=\"bootstrap-style\" href=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/bootstrap-responsive.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/font-awesome/css/font-awesome.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+
         <link id=\"base-style\" href=\"";
-        // line 20
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link id=\"base-style-responsive\" href=\"";
-        // line 21
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/style-responsive.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
@@ -58,21 +64,21 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
         <!--[if lt IE 9]>
                 <script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js')}}\"></script>
                 <link id=\"ie-style\" href=\"";
-        // line 29
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/ie.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <![endif]-->
 
         <!--[if IE 9]>
                 <link id=\"ie9style\" href=\"";
-        // line 33
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/css/ie9.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <![endif]-->
 
         <!-- start: Favicon -->
         <link rel=\"shortcut icon\" href=\"";
-        // line 37
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/img/favicon.ico"), "html", null, true);
         echo "\">
         <!-- end: Favicon -->
@@ -112,35 +118,34 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
                         <ul class=\"nav nav-tabs nav-stacked main-menu\">
                             <li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> </span></a></li>\t
                             <li><a href=\"";
-        // line 74
+        // line 77
         echo $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance");
         echo "\"><i class=\"icon-tasks\"></i><span class=\"hidden-tablet\"> ExtraitNaissance</span></a></li>
                             <li><a href=\"";
-        // line 75
+        // line 78
         echo $this->env->getExtension('routing')->getPath("demandeextrait");
         echo "\"></i><span class=\"hidden-tablet\"> Demande des extraits</span></a></li>
                             <li><a href=\"";
-        // line 76
+        // line 79
         echo $this->env->getExtension('routing')->getPath("fosuser");
         echo "\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> Gestion des utilisateurs</span></a></li>
-                            <li><a href=\"widgets.html\"><i class=\"icon-dashboard\"></i><span class=\"hidden-tablet\"> Widgets</span></a></li>
+                            <li><a href=\"";
+        // line 80
+        echo $this->env->getExtension('routing')->getPath("fosuser_agent");
+        echo "\"><i class=\"icon-dashboard\"></i><span class=\"hidden-tablet\"> Ajout Agent</span></a></li>
+                            <li><a href=\"";
+        // line 81
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\"><i class=\"icon-angle-right\"></i><span class=\"hidden-tablet\"> Logout</span></a></li>
+                            
                             <li>
-                                <a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Dropdown</span><span class=\"label label-important\"> 3 </span></a>
                                 <ul>
                                     <li><a class=\"submenu\" href=\"submenu.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 1</span></a></li>
                                     <li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 2</span></a></li>
                                     <li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 3</span></a></li>
                                 </ul>\t
                             </li>
-                            <li><a href=\"form.html\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Forms</span></a></li>
-                            <li><a href=\"chart.html\"><i class=\"icon-list-alt\"></i><span class=\"hidden-tablet\"> Charts</span></a></li>
-                            <li><a href=\"typography.html\"><i class=\"icon-font\"></i><span class=\"hidden-tablet\"> Typography</span></a></li>
-                            <li><a href=\"gallery.html\"><i class=\"icon-picture\"></i><span class=\"hidden-tablet\"> Gallery</span></a></li>
-                            <li><a href=\"table.html\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> Tables</span></a></li>
-                            <li><a href=\"calendar.html\"><i class=\"icon-calendar\"></i><span class=\"hidden-tablet\"> Calendar</span></a></li>
-                            <li><a href=\"file-manager.html\"><i class=\"icon-folder-open\"></i><span class=\"hidden-tablet\"> File Manager</span></a></li>
-                            <li><a href=\"icon.html\"><i class=\"icon-star\"></i><span class=\"hidden-tablet\"> Icons</span></a></li>
-                            <li><a href=\"login.html\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> Login Page</span></a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -166,9 +171,9 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
                         <li><a href=\"#\"></a></li>
                     </ul>
                     ";
-        // line 119
+        // line 115
         $this->displayBlock('body', $context, $blocks);
-        // line 121
+        // line 117
         echo "                </div><!--/.fluid-container-->
 
                 <!-- end: Content -->
@@ -212,147 +217,147 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
         <!-- start: JavaScript-->
 
         <script src=\"";
-        // line 163
+        // line 159
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 164
+        // line 160
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-migrate-1.0.0.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 166
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery-ui-1.10.0.custom.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 168
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 170
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/modernizr.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 172
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 174
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.cookie.js"), "html", null, true);
         echo "\"></script>
 
         <script src='";
-        // line 176
+        // line 172
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/fullcalendar.min.js"), "html", null, true);
         echo "'></script>
 
         <script src='";
-        // line 178
+        // line 174
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.dataTables.min.js"), "html", null, true);
         echo "'></script>
 
         <script src=\"";
-        // line 180
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/excanvas.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 181
+        // line 177
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 182
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 183
+        // line 179
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.stack.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 184
+        // line 180
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.flot.resize.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 186
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.chosen.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 188
+        // line 184
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.uniform.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 190
+        // line 186
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.cleditor.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 192
+        // line 188
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.noty.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 194
+        // line 190
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.elfinder.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 196
+        // line 192
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.raty.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 198
+        // line 194
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.iphone.toggle.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 200
+        // line 196
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 202
+        // line 198
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.gritter.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 204
+        // line 200
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.imagesloaded.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 206
+        // line 202
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.masonry.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 208
+        // line 204
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.knob.modified.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 210
+        // line 206
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 212
+        // line 208
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/counter.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 214
+        // line 210
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/retina.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 216
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("BackOffice/js/custom.js"), "html", null, true);
         echo "\"></script>
         <!-- end: JavaScript-->
@@ -362,10 +367,10 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 ";
     }
 
-    // line 119
+    // line 115
     public function block_body($context, array $blocks = array())
     {
-        // line 120
+        // line 116
         echo "                    ";
     }
 
@@ -381,7 +386,7 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 
     public function getDebugInfo()
     {
-        return array (  369 => 120,  366 => 119,  356 => 216,  351 => 214,  346 => 212,  341 => 210,  336 => 208,  331 => 206,  326 => 204,  321 => 202,  316 => 200,  311 => 198,  306 => 196,  301 => 194,  296 => 192,  291 => 190,  286 => 188,  281 => 186,  276 => 184,  272 => 183,  268 => 182,  264 => 181,  260 => 180,  255 => 178,  250 => 176,  245 => 174,  240 => 172,  235 => 170,  230 => 168,  225 => 166,  220 => 164,  216 => 163,  172 => 121,  170 => 119,  124 => 76,  120 => 75,  116 => 74,  76 => 37,  69 => 33,  62 => 29,  51 => 21,  47 => 20,  43 => 19,  39 => 18,  20 => 1,);
+        return array (  374 => 116,  371 => 115,  361 => 212,  356 => 210,  351 => 208,  346 => 206,  341 => 204,  336 => 202,  331 => 200,  326 => 198,  321 => 196,  316 => 194,  311 => 192,  306 => 190,  301 => 188,  296 => 186,  291 => 184,  286 => 182,  281 => 180,  277 => 179,  273 => 178,  269 => 177,  265 => 176,  260 => 174,  255 => 172,  250 => 170,  245 => 168,  240 => 166,  235 => 164,  230 => 162,  225 => 160,  221 => 159,  177 => 117,  175 => 115,  138 => 81,  134 => 80,  130 => 79,  126 => 78,  122 => 77,  82 => 40,  75 => 36,  68 => 32,  57 => 24,  53 => 23,  48 => 21,  44 => 20,  40 => 19,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -401,8 +406,11 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /*         <!-- end: Mobile Specific -->*/
 /* */
 /*         <!-- start: CSS -->*/
+/*         */
 /*         <link id="bootstrap-style" href="{{asset('BackOffice/css/bootstrap.min.css')}}" rel="stylesheet">*/
 /*         <link href="{{asset('BackOffice/css/bootstrap-responsive.min.css')}}" rel="stylesheet">*/
+/*         <link href="{{asset('BackOffice/css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">*/
+/* */
 /*         <link id="base-style" href="{{asset('BackOffice/css/style.css')}}" rel="stylesheet">*/
 /*         <link id="base-style-responsive" href="{{asset('BackOffice/css/style-responsive.css')}}" rel="stylesheet">*/
 /*         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>*/
@@ -460,24 +468,17 @@ class __TwigTemplate_dfcb660bfc99d7f270e9e8bbf20556b5477619e2ec491b2ebf1153bbb10
 /*                             <li><a href="{{ path('back_officeback_extraitnaissance') }}"><i class="icon-tasks"></i><span class="hidden-tablet"> ExtraitNaissance</span></a></li>*/
 /*                             <li><a href="{{ path('demandeextrait') }}"></i><span class="hidden-tablet"> Demande des extraits</span></a></li>*/
 /*                             <li><a href="{{ path('fosuser') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Gestion des utilisateurs</span></a></li>*/
-/*                             <li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>*/
+/*                             <li><a href="{{ path('fosuser_agent') }}"><i class="icon-dashboard"></i><span class="hidden-tablet"> Ajout Agent</span></a></li>*/
+/*                             <li><a href="{{ path('logout') }}"><i class="icon-angle-right"></i><span class="hidden-tablet"> Logout</span></a></li>*/
+/*                             */
 /*                             <li>*/
-/*                                 <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>*/
 /*                                 <ul>*/
 /*                                     <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>*/
 /*                                     <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>*/
 /*                                     <li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>*/
 /*                                 </ul>	*/
 /*                             </li>*/
-/*                             <li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>*/
-/*                             <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>*/
-/*                             <li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>*/
-/*                             <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>*/
-/*                             <li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>*/
-/*                             <li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>*/
-/*                             <li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>*/
-/*                             <li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>*/
-/*                             <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>*/
+/*                             */
 /*                         </ul>*/
 /*                     </div>*/
 /*                 </div>*/

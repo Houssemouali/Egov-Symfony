@@ -90,7 +90,7 @@ class __TwigTemplate_bfbe5b16af83dd64015db89e63adb2bdff19cea5b4c79c9fcc6404d2424
                         
                         <form  method=\"POST\" action=\"";
         // line 55
-        echo $this->env->getExtension('routing')->getPath("demandeextrait_create");
+        echo $this->env->getExtension('routing')->getPath("front_office_new");
         echo "\">
                             
                             <div class=\"form-group\">
@@ -126,80 +126,7 @@ class __TwigTemplate_bfbe5b16af83dd64015db89e63adb2bdff19cea5b4c79c9fcc6404d2424
 
     <div class=\"mbr-section__container container\">
         <div class=\"mbr-header mbr-header--inline row\" style=\"padding-top: 40.8px; padding-bottom: 40.8px;\">
-            <div class=\"col-sm-4\">
-                <h3 class=\"mbr-header__text\">FOLLOW US</h3>
-            </div>
-            <div class=\"mbr-social-icons mbr-social-icons--style-1 col-sm-8\"><a class=\"mbr-social-icons__icon socicon-bg-twitter\" title=\"Twitter\" target=\"_blank\" href=\"https://twitter.com/mobirise\"><i class=\"socicon socicon-twitter\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-facebook\" title=\"Facebook\" target=\"_blank\" href=\"https://www.facebook.com/pages/Mobirise/1616226671953247\"><i class=\"socicon socicon-facebook\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-googleplus\" title=\"Google+\" target=\"_blank\" href=\"https://plus.google.com/u/0/+Mobirise/posts\"><i class=\"socicon socicon-googleplus\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-youtube\" title=\"YouTube\" target=\"_blank\" href=\"http://www.youtube.com/channel/UCt_tncVAetpK5JeM8L-8jyw\"><i class=\"socicon socicon-youtube\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-instagram\" title=\"Instagram\" target=\"_blank\" href=\"https://instagram.com/mobirise/\"><i class=\"socicon socicon-instagram\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-pinterest\" title=\"Pinterest\" target=\"_blank\" href=\"https://www.pinterest.com/mobirise/\"><i class=\"socicon socicon-pinterest\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-github\" title=\"GitHub\" target=\"_blank\" href=\"https://github.com/Mobirise\"><i class=\"socicon socicon-github\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-behance\" title=\"Behance\" target=\"_blank\" href=\"https://www.behance.net/Mobirise\"><i class=\"socicon socicon-behance\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-tumblr\" title=\"Tumblr\" target=\"_blank\" href=\"http://mobirise.tumblr.com/\"><i class=\"socicon socicon-tumblr\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-linkedin\" title=\"LinkedIn\" target=\"_blank\" href=\"https://www.linkedin.com/in/mobirise\"><i class=\"socicon socicon-linkedin\"></i></a> <a class=\"mbr-social-icons__icon socicon-bg-android\" title=\"Google Play\" target=\"_blank\" href=\"https://play.google.com/store/apps/details?id=com.mobirise.mobirise\"><i class=\"socicon socicon-android\"></i></a></div>
-        </div>
-    </div>
-</section>
-
-<section class=\"mbr-section mbr-section--relative mbr-section--fixed-size\" id=\"contacts2-13\" style=\"background-color: rgb(60, 60, 60);\">
-    
-    <div class=\"mbr-section__container container\">
-        <div class=\"mbr-contacts mbr-contacts--wysiwyg row\" style=\"padding-top: 45px; padding-bottom: 45px;\">
-            <div class=\"col-sm-6\">
-                <figure class=\"mbr-figure mbr-figure--wysiwyg mbr-figure--full-width mbr-figure--no-bg\">
-                    <div class=\"mbr-figure__map mbr-figure__map--short mbr-google-map\">
-                        <p class=\"mbr-google-map__marker\" data-coordinates=\"40.748384,-73.9854792\"></p>
-                    </div>
-                </figure>
-            </div>
-            <div class=\"col-sm-6\">
-                <div class=\"row\">
-                    <div class=\"col-sm-5 col-sm-offset-1\">
-                        <p class=\"mbr-contacts__text\"><strong>ADDRESS</strong><br>
-1234 Street Name<br>
-City, AA 99999<br><br>
-<strong>CONTACTS</strong><br>
-Email: support@mobirise.com<br>
-Phone: +1 (0) 000 0000 001<br>
-Fax: +1 (0) 000 0000 002</p>
-                    </div>
-                    <div class=\"col-sm-6\"><p class=\"mbr-contacts__text\"><strong>LINKS</strong></p><ul class=\"mbr-contacts__list\"><li><a class=\"mbr-contacts__link text-gray\" href=\"https://mobirise.com/\">Website builder</a></li><li><a class=\"mbr-contacts__link text-gray\" href=\"https://mobirise.com/mobirise-free-win.zip\">Download for Windows</a></li><li><a class=\"mbr-contacts__link text-gray\" href=\"https://mobirise.com/mobirise-free-mac.zip\">Download for Mac</a></li></ul></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class=\"mbr-section mbr-section--relative mbr-section--fixed-size\" id=\"footer1-2\" style=\"background-color: rgb(60, 60, 60);\">
-    
-    <div class=\"mbr-section__container container\">
-        <div class=\"mbr-footer mbr-footer--wysiwyg row\" style=\"padding-top: 36.900000000000006px; padding-bottom: 36.900000000000006px;\">
-            <div class=\"col-sm-12\">
-                <p class=\"mbr-footer__copyright\">Copyright (c) 2015 Company Name. <a class=\"mbr-footer__link text-gray\" href=\"https://mobirise.com/\">Terms of Use</a>  | <a class=\"mbr-footer__link text-gray\" href=\"https://mobirise.com/\">Privacy Policy</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-  <script src=\"";
-        // line 139
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetss/web/jquery/jquery.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 140
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetss/bootstrap/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"https://maps.googleapis.com/maps/api/js\"></script>
-  <script src=\"";
-        // line 142
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetss/smooth-scroll/SmoothScroll.js"), "html", null, true);
-        echo "\"></script>
-  <!--[if lte IE 9]>
-    <script src=\"";
-        // line 144
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetss/jquery-placeholder/jquery.placeholder.min.js"), "html", null, true);
-        echo "\"></script>
-  <![endif]-->
-  <script src=\"";
-        // line 146
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetss/mobirise/js/script.js"), "html", null, true);
-        echo "\"></script>
-  
-  
+           
 </body>
 </html>";
     }
@@ -216,7 +143,7 @@ Fax: +1 (0) 000 0000 002</p>
 
     public function getDebugInfo()
     {
-        return array (  199 => 146,  194 => 144,  189 => 142,  184 => 140,  180 => 139,  93 => 55,  63 => 28,  48 => 16,  44 => 15,  40 => 14,  36 => 13,  29 => 9,  19 => 1,);
+        return array (  93 => 55,  63 => 28,  48 => 16,  44 => 15,  40 => 14,  36 => 13,  29 => 9,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -273,7 +200,7 @@ Fax: +1 (0) 000 0000 002</p>
 /*                             <h2 class="mbr-header__text">DEMANDER Extrait Naissance</h2>*/
 /*                         </div>*/
 /*                         */
-/*                         <form  method="POST" action="{{path('demandeextrait_create')}}">*/
+/*                         <form  method="POST" action="{{path('front_office_new')}}">*/
 /*                             */
 /*                             <div class="form-group">*/
 /*                                 <input type="text" class="form-control" name="nom" required="" placeholder="nom*">*/
@@ -308,65 +235,7 @@ Fax: +1 (0) 000 0000 002</p>
 /* */
 /*     <div class="mbr-section__container container">*/
 /*         <div class="mbr-header mbr-header--inline row" style="padding-top: 40.8px; padding-bottom: 40.8px;">*/
-/*             <div class="col-sm-4">*/
-/*                 <h3 class="mbr-header__text">FOLLOW US</h3>*/
-/*             </div>*/
-/*             <div class="mbr-social-icons mbr-social-icons--style-1 col-sm-8"><a class="mbr-social-icons__icon socicon-bg-twitter" title="Twitter" target="_blank" href="https://twitter.com/mobirise"><i class="socicon socicon-twitter"></i></a> <a class="mbr-social-icons__icon socicon-bg-facebook" title="Facebook" target="_blank" href="https://www.facebook.com/pages/Mobirise/1616226671953247"><i class="socicon socicon-facebook"></i></a> <a class="mbr-social-icons__icon socicon-bg-googleplus" title="Google+" target="_blank" href="https://plus.google.com/u/0/+Mobirise/posts"><i class="socicon socicon-googleplus"></i></a> <a class="mbr-social-icons__icon socicon-bg-youtube" title="YouTube" target="_blank" href="http://www.youtube.com/channel/UCt_tncVAetpK5JeM8L-8jyw"><i class="socicon socicon-youtube"></i></a> <a class="mbr-social-icons__icon socicon-bg-instagram" title="Instagram" target="_blank" href="https://instagram.com/mobirise/"><i class="socicon socicon-instagram"></i></a> <a class="mbr-social-icons__icon socicon-bg-pinterest" title="Pinterest" target="_blank" href="https://www.pinterest.com/mobirise/"><i class="socicon socicon-pinterest"></i></a> <a class="mbr-social-icons__icon socicon-bg-github" title="GitHub" target="_blank" href="https://github.com/Mobirise"><i class="socicon socicon-github"></i></a> <a class="mbr-social-icons__icon socicon-bg-behance" title="Behance" target="_blank" href="https://www.behance.net/Mobirise"><i class="socicon socicon-behance"></i></a> <a class="mbr-social-icons__icon socicon-bg-tumblr" title="Tumblr" target="_blank" href="http://mobirise.tumblr.com/"><i class="socicon socicon-tumblr"></i></a> <a class="mbr-social-icons__icon socicon-bg-linkedin" title="LinkedIn" target="_blank" href="https://www.linkedin.com/in/mobirise"><i class="socicon socicon-linkedin"></i></a> <a class="mbr-social-icons__icon socicon-bg-android" title="Google Play" target="_blank" href="https://play.google.com/store/apps/details?id=com.mobirise.mobirise"><i class="socicon socicon-android"></i></a></div>*/
-/*         </div>*/
-/*     </div>*/
-/* </section>*/
-/* */
-/* <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="contacts2-13" style="background-color: rgb(60, 60, 60);">*/
-/*     */
-/*     <div class="mbr-section__container container">*/
-/*         <div class="mbr-contacts mbr-contacts--wysiwyg row" style="padding-top: 45px; padding-bottom: 45px;">*/
-/*             <div class="col-sm-6">*/
-/*                 <figure class="mbr-figure mbr-figure--wysiwyg mbr-figure--full-width mbr-figure--no-bg">*/
-/*                     <div class="mbr-figure__map mbr-figure__map--short mbr-google-map">*/
-/*                         <p class="mbr-google-map__marker" data-coordinates="40.748384,-73.9854792"></p>*/
-/*                     </div>*/
-/*                 </figure>*/
-/*             </div>*/
-/*             <div class="col-sm-6">*/
-/*                 <div class="row">*/
-/*                     <div class="col-sm-5 col-sm-offset-1">*/
-/*                         <p class="mbr-contacts__text"><strong>ADDRESS</strong><br>*/
-/* 1234 Street Name<br>*/
-/* City, AA 99999<br><br>*/
-/* <strong>CONTACTS</strong><br>*/
-/* Email: support@mobirise.com<br>*/
-/* Phone: +1 (0) 000 0000 001<br>*/
-/* Fax: +1 (0) 000 0000 002</p>*/
-/*                     </div>*/
-/*                     <div class="col-sm-6"><p class="mbr-contacts__text"><strong>LINKS</strong></p><ul class="mbr-contacts__list"><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/">Website builder</a></li><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/mobirise-free-win.zip">Download for Windows</a></li><li><a class="mbr-contacts__link text-gray" href="https://mobirise.com/mobirise-free-mac.zip">Download for Mac</a></li></ul></div>*/
-/*                 </div>*/
-/*             </div>*/
-/*         </div>*/
-/*     </div>*/
-/* </section>*/
-/* */
-/* <footer class="mbr-section mbr-section--relative mbr-section--fixed-size" id="footer1-2" style="background-color: rgb(60, 60, 60);">*/
-/*     */
-/*     <div class="mbr-section__container container">*/
-/*         <div class="mbr-footer mbr-footer--wysiwyg row" style="padding-top: 36.900000000000006px; padding-bottom: 36.900000000000006px;">*/
-/*             <div class="col-sm-12">*/
-/*                 <p class="mbr-footer__copyright">Copyright (c) 2015 Company Name. <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Terms of Use</a>  | <a class="mbr-footer__link text-gray" href="https://mobirise.com/">Privacy Policy</a></p>*/
-/*             </div>*/
-/*         </div>*/
-/*     </div>*/
-/* </footer>*/
-/* */
-/* */
-/*   <script src="{{asset('assetss/web/jquery/jquery.min.js')}}"></script>*/
-/*   <script src="{{asset('assetss/bootstrap/js/bootstrap.min.js')}}"></script>*/
-/*   <script src="https://maps.googleapis.com/maps/api/js"></script>*/
-/*   <script src="{{asset('assetss/smooth-scroll/SmoothScroll.js')}}"></script>*/
-/*   <!--[if lte IE 9]>*/
-/*     <script src="{{asset('assetss/jquery-placeholder/jquery.placeholder.min.js')}}"></script>*/
-/*   <![endif]-->*/
-/*   <script src="{{asset('assetss/mobirise/js/script.js')}}"></script>*/
-/*   */
-/*   */
+/*            */
 /* </body>*/
 /* </html>{# empty Twig template #}*/
 /* */

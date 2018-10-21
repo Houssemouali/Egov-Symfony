@@ -1,0 +1,87 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Demandeextrait
+ *
+ * @ORM\Table(name="demandeextrait", indexes={@ORM\Index(name="cin_pere", columns={"cin_pere"}), @ORM\Index(name="cin_mere", columns={"cin_mere"})})
+ * @ORM\Entity
+ */
+class Demandeextrait
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=50, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu_naissance", type="string", length=50, nullable=false)
+     */
+    private $lieuNaissance;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_naissance", type="date", nullable=false)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=50, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=100, nullable=true)
+     */
+    private $commentaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin_mere", referencedColumnName="id")
+     * })
+     */
+    private $cinMere;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin_pere", referencedColumnName="id")
+     * })
+     */
+    private $cinPere;
+
+
+}

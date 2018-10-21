@@ -1,0 +1,88 @@
+<?php
+
+namespace BackOffice\backBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Importer
+ *
+ * @ORM\Table(name="importer")
+ * @ORM\Entity
+ */
+class Importer
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pathmere", type="string", length=40, nullable=false)
+     */
+    private $pathmere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pathpere", type="string", length=40, nullable=false)
+     */
+    private $pathpere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pathmariage", type="string", length=40, nullable=false)
+     */
+    private $pathmariage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomfils", type="string", length=20, nullable=false)
+     */
+    private $nomfils;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenomfils", type="string", length=20, nullable=false)
+     */
+    private $prenomfils;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sex", type="string", length=20, nullable=false)
+     */
+    private $sex;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationalite", type="string", length=20, nullable=false)
+     */
+    private $nationalite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_naissance", type="string", length=20, nullable=false)
+     */
+    private $adresseNaissance;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_naissance", type="date", nullable=false)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -4,6 +4,9 @@
     <indexes>
       <index name="extrait" columns="extrait"/>
     </indexes>
+    <unique-constraints>
+      <unique-constraint name="num_cin" columns="num_cin"/>
+    </unique-constraints>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>

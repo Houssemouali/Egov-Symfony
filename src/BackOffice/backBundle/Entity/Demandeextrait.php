@@ -83,7 +83,15 @@ class Demandeextrait
      */
     private $cinPere;
 
-
+     /**
+     * @var \BackOffice\backBundle\Entity\FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="BackOffice\backBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user", referencedColumnName="id")
+     * })
+     */
+    private $user;
 
     /**
      * Set nom
@@ -277,5 +285,28 @@ class Demandeextrait
     public function getCinPere()
     {
         return $this->cinPere;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \BackOffice\backBundle\Entity\FosUser $user
+     * @return Demandeextrait
+     */
+    public function setUser(\BackOffice\backBundle\Entity\FosUser $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \BackOffice\backBundle\Entity\FosUser 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

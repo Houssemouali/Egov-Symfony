@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Inter\CinBundle\Entity\Demandeextrait" table="demandeextrait">
+    <indexes>
+      <index name="cin_pere" columns="cin_pere"/>
+      <index name="cin_mere" columns="cin_mere"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="50" nullable="false"/>
+    <field name="prenom" type="string" column="prenom" length="50" nullable="false"/>
+    <field name="lieuNaissance" type="string" column="lieu_naissance" length="50" nullable="false"/>
+    <field name="dateNaissance" type="date" column="date_naissance" nullable="false"/>
+    <field name="etat" type="string" column="etat" length="50" nullable="false"/>
+    <field name="commentaire" type="string" column="commentaire" length="100" nullable="true"/>
+    <many-to-one field="cinMere" target-entity="Cin">
+      <join-columns>
+        <join-column name="cin_mere" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cinPere" target-entity="Cin">
+      <join-columns>
+        <join-column name="cin_pere" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,6 +1,6 @@
 <?php
 
-/* MyAppUserBundle::layout.html.twig */
+/* FOSUserBundle::layout.html.twig */
 class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e6d109 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -43,8 +43,9 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
         // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"screen\">\t
+
                                     <link href=\"";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/responsive.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"screen\">\t\t
                                         </head>
@@ -110,10 +111,10 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
 
                                                                                     <div class=\"clearfix newsletter\">
                                                                                         ";
-        // line 84
+        // line 85
         echo "                                                                                        ";
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 86
+        // line 87
         echo "                                                                                    </div>
                                                                                     <div class=\"clearfix sidebar\">
 
@@ -158,7 +159,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
 
                                                                         <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-1.7.0.min.js\"></script>\t
                                                                         <script type=\"text/javascript\" src=\"";
-        // line 129
+        // line 130
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/js/jquery.tooltipster.min.js"), "html", null, true);
         echo "\"></script>\t\t
                                                                         <script type=\"text/javascript\">
@@ -167,7 +168,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
                                                                             });
                                                                         </script>
                                                                         <script type=\"text/javascript\" src=\"";
-        // line 135
+        // line 136
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/js/selectnav.min.js"), "html", null, true);
         echo "\"></script>
                                                                         <script type=\"text/javascript\">
@@ -178,7 +179,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
                                                                             });
                                                                         </script>\t\t
                                                                         <script src=\"";
-        // line 143
+        // line 144
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/js/pgwslider.js"), "html", null, true);
         echo "\"></script>
                                                                         <script type=\"text/javascript\">
@@ -190,7 +191,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
                                                                             });
                                                                         </script>
                                                                         <script type=\"text/javascript\" src=\"";
-        // line 152
+        // line 153
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/front/js/placeholder_support_IE.js"), "html", null, true);
         echo "\"></script>
 
@@ -613,16 +614,16 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
                                                                         </html>";
     }
 
-    // line 84
+    // line 85
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 85
+        // line 86
         echo "                                                                                        ";
     }
 
     public function getTemplateName()
     {
-        return "MyAppUserBundle::layout.html.twig";
+        return "FOSUserBundle::layout.html.twig";
     }
 
     public function isTraitable()
@@ -632,7 +633,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
 
     public function getDebugInfo()
     {
-        return array (  620 => 85,  617 => 84,  194 => 152,  182 => 143,  171 => 135,  162 => 129,  117 => 86,  114 => 84,  48 => 15,  44 => 14,  40 => 13,  35 => 11,  30 => 9,  20 => 1,);
+        return array (  621 => 86,  618 => 85,  195 => 153,  183 => 144,  172 => 136,  163 => 130,  118 => 87,  115 => 85,  49 => 16,  44 => 14,  40 => 13,  35 => 11,  30 => 9,  20 => 1,);
     }
 }
 /* <html */
@@ -649,6 +650,7 @@ class __TwigTemplate_2bebf8ee812e72462c04374384c207fd02ae3e56c3b500517e60e71626e
 /*                             <!-- Font Awesome -->*/
 /*                             <link rel="stylesheet" href="{{asset('bundles/front/css/font-awesome.min.css')}}">*/
 /*                                 <link href="{{asset('bundles/front/style.css')}}" rel="stylesheet" media="screen">	*/
+/* */
 /*                                     <link href="{{asset('bundles/front/responsive.css')}}" rel="stylesheet" media="screen">		*/
 /*                                         </head>*/
 /* */

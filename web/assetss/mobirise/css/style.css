@@ -6,6 +6,11 @@ html {
   position: relative;
   min-height: 100%;
 }
+body{
+    background: url('../../images/tunisie.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 .mbr-embedded-video {
   position: relative;
 }

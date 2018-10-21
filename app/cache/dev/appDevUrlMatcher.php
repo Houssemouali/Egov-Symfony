@@ -150,9 +150,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'my_app_user_homepage',);
         }
 
-        // my_app_user_home
-        if ($pathinfo === '/login2/reg') {
-            return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::loginInscAction',  '_route' => 'my_app_user_home',);
+        if (0 === strpos($pathinfo, '/log')) {
+            // my_app_user_home
+            if ($pathinfo === '/login2/reg') {
+                return array (  '_controller' => 'MyApp\\UserBundle\\Controller\\DefaultController::loginInscAction',  '_route' => 'my_app_user_home',);
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/back')) {
@@ -231,9 +239,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'fosuser_show')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\FosUserController::blockAction',));
                 }
 
-                // fosuser_new
-                if ($pathinfo === '/back/fosuser/new') {
-                    return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\FosUserController::newAction',  '_route' => 'fosuser_new',);
+                if (0 === strpos($pathinfo, '/back/fosuser/new')) {
+                    // fosuser_new
+                    if ($pathinfo === '/back/fosuser/new') {
+                        return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\FosUserController::newAction',  '_route' => 'fosuser_new',);
+                    }
+
+                    // fosuser_agent
+                    if ($pathinfo === '/back/fosuser/newagent') {
+                        return array (  '_controller' => 'BackOffice\\backBundle\\Controller\\FosUserController::agentAction',  '_route' => 'fosuser_agent',);
+                    }
+
                 }
 
                 // fosuser_create
@@ -379,6 +395,303 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 // back_officeback_extraitnaissance_delete
                 if (preg_match('#^/back/extraitnaissance/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'back_officeback_extraitnaissance_delete')), array (  '_controller' => 'BackOffice\\backBundle\\Controller\\ExtraitNaissanceController::updateAction',));
+                }
+
+            }
+
+        }
+
+        // inter_cin_homepage
+        if (0 === strpos($pathinfo, '/hello/x') && preg_match('#^/hello/x/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'inter_cin_homepage')), array (  '_controller' => 'Inter\\CinBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // inter_cin_backpage
+        if ($pathinfo === '/back/inter') {
+            return array (  '_controller' => 'Inter\\CinBundle\\Controller\\CinController::backAction',  '_route' => 'inter_cin_backpage',);
+        }
+
+        if (0 === strpos($pathinfo, '/Back/Inter')) {
+            // egov_back_listcin_cine
+            if ($pathinfo === '/Back/Inter/listcin') {
+                return array (  '_controller' => 'Inter\\CinBundle\\Controller\\CinController::ListCinBackAction',  '_route' => 'egov_back_listcin_cine',);
+            }
+
+            // inter_Back_suppCin
+            if (0 === strpos($pathinfo, '/Back/Inter/suppCin') && preg_match('#^/Back/Inter/suppCin/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'inter_Back_suppCin')), array (  '_controller' => 'Inter\\CinBundle\\Controller\\CinController::suppCinBackAction',));
+            }
+
+            // inter_cin_update
+            if ($pathinfo === '/Back/Inter/cinupdate') {
+                return array (  '_controller' => 'Inter\\CinBundle\\Controller\\CinController::updateCinAction',  '_route' => 'inter_cin_update',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/front')) {
+            // inter_cin_frontajout
+            if ($pathinfo === '/front/Inter/ajoucin') {
+                return array (  '_controller' => 'Inter\\CinBundle\\Controller\\CinController::AjoutCINFrontAction',  '_route' => 'inter_cin_frontajout',);
+            }
+
+            // egov_front_homepage
+            if ($pathinfo === '/front') {
+                return array (  '_controller' => 'Inter\\CinBundle\\Controller\\DefaultController::indexAction',  '_route' => 'egov_front_homepage',);
+            }
+
+        }
+
+        // my_app_mail_succ
+        if ($pathinfo === '/succ') {
+            return array (  '_controller' => 'Inter\\CinBundle\\Controller\\MailController::indexAction',  '_route' => 'my_app_mail_succ',);
+        }
+
+        // my_app_mail_form
+        if ($pathinfo === '/mail') {
+            return array (  '_controller' => 'Inter\\CinBundle\\Controller\\MailController::newAction',  '_route' => 'my_app_mail_form',);
+        }
+
+        // my_app_mail_sendpage
+        if ($pathinfo === '/sendmail') {
+            return array (  '_controller' => 'Inter\\CinBundle\\Controller\\MailController::SendMailAction',  '_route' => 'my_app_mail_sendpage',);
+        }
+
+        if (0 === strpos($pathinfo, '/compte')) {
+            // compte
+            if (rtrim($pathinfo, '/') === '/compte') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'compte');
+                }
+
+                return array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::indexAction',  '_route' => 'compte',);
+            }
+
+            // compte_show
+            if (preg_match('#^/compte/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'compte_show')), array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::showAction',));
+            }
+
+            // compte_new
+            if ($pathinfo === '/compte/new') {
+                return array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::newAction',  '_route' => 'compte_new',);
+            }
+
+            // compte_create
+            if ($pathinfo === '/compte/create') {
+                return array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::createAction',  '_route' => 'compte_create',);
+            }
+
+            // compte_edit
+            if (preg_match('#^/compte/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'compte_edit')), array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::editAction',));
+            }
+
+            // compte_update
+            if (preg_match('#^/compte/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_compte_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'compte_update')), array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::updateAction',));
+            }
+            not_compte_update:
+
+            // compte_delete
+            if (preg_match('#^/compte/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_compte_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'compte_delete')), array (  '_controller' => 'CompteCPBundle\\Controller\\CompteController::deleteAction',));
+            }
+            not_compte_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/backoff/demande')) {
+            if (0 === strpos($pathinfo, '/backoff/demande/C')) {
+                // demande_cpp
+                if ($pathinfo === '/backoff/demande/CPP') {
+                    return array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::indexCPPAction',  '_route' => 'demande_cpp',);
+                }
+
+                // demande_cin
+                if ($pathinfo === '/backoff/demande/Cin') {
+                    return array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::indexCinAction',  '_route' => 'demande_cin',);
+                }
+
+            }
+
+            // demande_b3
+            if ($pathinfo === '/backoff/demande/b3') {
+                return array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::indexB3Action',  '_route' => 'demande_b3',);
+            }
+
+            // demande_valider
+            if (preg_match('#^/backoff/demande/(?P<id>[^/]++)/valider$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demande_valider')), array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::validerAction',));
+            }
+
+            // demande_validercin
+            if (preg_match('#^/backoff/demande/(?P<id>[^/]++)/validercin$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demande_validercin')), array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::validerCinAction',));
+            }
+
+            // demande_ajoutCin
+            if (preg_match('#^/backoff/demande/(?P<id>[^/]++)/ajoutCin$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demande_ajoutCin')), array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::newCinAction',));
+            }
+
+            // demande_commenter
+            if (preg_match('#^/backoff/demande/(?P<id>[^/]++)/commenter$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demande_commenter')), array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::commenterAction',));
+            }
+
+            // demande_newCPP
+            if ($pathinfo === '/backoff/demande/newCPP') {
+                return array (  '_controller' => 'CompteCPBundle\\Controller\\DemandeController::newCPPAction',  '_route' => 'demande_newCPP',);
+            }
+
+        }
+
+        // compte_cp_firas
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'compte_cp_firas');
+            }
+
+            return array (  '_controller' => 'CompteCPBundle\\Controller\\DefaultController::indexAction',  '_route' => 'compte_cp_firas',);
+        }
+
+        // comment_firas
+        if ($pathinfo === '/comment') {
+            return array (  '_controller' => 'CompteCPBundle\\Controller\\DefaultController::indexCommentAction',  '_route' => 'comment_firas',);
+        }
+
+        // about_firas
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'CompteCPBundle\\Controller\\DefaultController::aboutAction',  '_route' => 'about_firas',);
+        }
+
+        // egov_back
+        if ($pathinfo === '/backoff') {
+            return array (  '_controller' => 'CompteCPBundle\\Controller\\DefaultController::BackofficeAction',  '_route' => 'egov_back',);
+        }
+
+        if (0 === strpos($pathinfo, '/Front')) {
+            if (0 === strpos($pathinfo, '/Front/indus')) {
+                // egovhich_main_homepage
+                if ($pathinfo === '/Front/indus') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\DefaultController::indexAction',  '_route' => 'egovhich_main_homepage',);
+                }
+
+                // egov_main_addauto
+                if ($pathinfo === '/Front/indus/addauto') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::AddAutoFrontAction',  '_route' => 'egov_main_addauto',);
+                }
+
+            }
+
+            // egov_main_addcin
+            if ($pathinfo === '/Front/addcin') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::AddCINFrontAction',  '_route' => 'egov_main_addcin',);
+            }
+
+            // egov_main_listautosfront
+            if ($pathinfo === '/Front/indus/listautos') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::listfrontautosAction',  '_route' => 'egov_main_listautosfront',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/Back')) {
+            // egov_back_home
+            if ($pathinfo === '/Back') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::BackAction',  '_route' => 'egov_back_home',);
+            }
+
+            if (0 === strpos($pathinfo, '/Back/add')) {
+                // egov_back_addcin
+                if ($pathinfo === '/Back/addcin') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::AddCINBackAction',  '_route' => 'egov_back_addcin',);
+                }
+
+                // egov_back_addauto
+                if ($pathinfo === '/Back/addauto') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::AddAutoBackAction',  '_route' => 'egov_back_addauto',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/Back/list')) {
+                // egov_back_listauto
+                if ($pathinfo === '/Back/listauto') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::ListAutoBackAction',  '_route' => 'egov_back_listauto',);
+                }
+
+                // egov_back_listcin_cin
+                if ($pathinfo === '/Back/listcin') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::ListCinBackAction',  '_route' => 'egov_back_listcin_cin',);
+                }
+
+            }
+
+            // egov_Back_suppCin
+            if (0 === strpos($pathinfo, '/Back/suppCin') && preg_match('#^/Back/suppCin/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'egov_Back_suppCin')), array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::suppCinBackAction',));
+            }
+
+            // cin_update
+            if ($pathinfo === '/Back/cinupdate') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::updateCinAction',  '_route' => 'cin_update',);
+            }
+
+            if (0 === strpos($pathinfo, '/Back/a')) {
+                // auto_update
+                if ($pathinfo === '/Back/autoupdate') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\AutorisationController::updateAction',  '_route' => 'auto_update',);
+                }
+
+                // egov_back_addfac
+                if ($pathinfo === '/Back/addfac') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::ajoutFacAction',  '_route' => 'egov_back_addfac',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/Front/indus/lists')) {
+            // egov_Front_ListSteg
+            if ($pathinfo === '/Front/indus/liststeg') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::listSTEGEAction',  '_route' => 'egov_Front_ListSteg',);
+            }
+
+            // egov_Front_ListSonede
+            if ($pathinfo === '/Front/indus/listsonede') {
+                return array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::listSONEDEEAction',  '_route' => 'egov_Front_ListSonede',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/Back')) {
+            // egov_Back_suppFac
+            if (0 === strpos($pathinfo, '/Back/suppfac') && preg_match('#^/Back/suppfac/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'egov_Back_suppFac')), array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::suppFacBackAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/Back/lists')) {
+                // egov_Back_listSteg
+                if ($pathinfo === '/Back/liststeg') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::listSTEGBackAction',  '_route' => 'egov_Back_listSteg',);
+                }
+
+                // egov_Back_listSonede
+                if ($pathinfo === '/Back/listsonede') {
+                    return array (  '_controller' => 'Egov\\MainBundle\\Controller\\FactureController::listSONEDEBackAction',  '_route' => 'egov_Back_listSonede',);
                 }
 
             }

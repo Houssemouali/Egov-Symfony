@@ -9,6 +9,9 @@ fosuser_show:
 fosuser_new:
     path:     /new
     defaults: { _controller: "BackOfficebackBundle:FosUser:new" }
+fosuser_agent:
+    path:     /newagent
+    defaults: { _controller: "BackOfficebackBundle:FosUser:agent" }
 
 fosuser_create:
     path:     /create

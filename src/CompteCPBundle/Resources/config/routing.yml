@@ -1,0 +1,23 @@
+compte_cp_compte:
+    resource: "@CompteCPBundle/Resources/config/routing/compte.yml"
+    prefix:   /compte
+    
+compte_cp_demande:
+    resource: "@CompteCPBundle/Resources/config/routing/demande.yml"
+    prefix:   /backoff/demande
+    
+compte_cp_firas:
+    path:     /
+    defaults: { _controller: CompteCPBundle:Default:index }
+    
+comment_firas:
+    path:     /comment
+    defaults: { _controller: CompteCPBundle:Default:indexComment }
+    
+about_firas:
+    path:     /about
+    defaults: { _controller: CompteCPBundle:Default:about }   
+egov_back:
+    path:     /backoff
+    defaults: { _controller: CompteCPBundle:Default:Backoffice }
+

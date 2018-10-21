@@ -1,0 +1,15 @@
+#comptecpbundle_compte_submit{
+    -webkit-transition: all 0.2s ease-in-out 0s;
+-o-transition: all 0.2s ease-in-out 0s;
+transition: all 0.2s ease-in-out 0s;
+border-width: 2px;
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 2px;
+text-decoration: none;
+word-spacing: 1px;
+border-color: #f85f39;
+color: #ffffff;
+background-color: #f97352;
+border-color: #f97352;
+}

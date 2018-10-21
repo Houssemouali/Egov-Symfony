@@ -42,25 +42,26 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
                 
                 <th>Id</th>
                 <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 22
+            // line 23
             echo "            <tr>
                 <td><a href=\"";
-            // line 23
+            // line 24
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("fosuser_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "username", array()), "html", null, true);
             echo "</a></td>
                 
                 <td>";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "email", array()), "html", null, true);
             echo "</td>
                
@@ -68,27 +69,27 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
                 
               
                 <td>";
-            // line 30
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "locked", array()), "html", null, true);
             echo "</td>
                
                 <td>";
-            // line 32
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</td>
                 <td>
                 <ul>
                     <li>
                         <a href=\"";
-            // line 36
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("fosuser_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">Desactiver</a>
+            echo "\"><i class=\"fa fa-close\" aria-hidden=\"true\"></i></a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 39
+            // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("fosuser_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">Activer</a>
+            echo "\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>
                     </li>
                 </ul>
                 </td>
@@ -98,14 +99,14 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 46
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 50
+        // line 51
         echo $this->env->getExtension('routing')->getPath("fosuser_new");
         echo "\">
                 Create a new entry
@@ -127,7 +128,7 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
 
     public function getDebugInfo()
     {
-        return array (  109 => 50,  102 => 45,  90 => 39,  84 => 36,  77 => 32,  72 => 30,  64 => 25,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  110 => 51,  103 => 46,  91 => 40,  85 => 37,  78 => 33,  73 => 31,  65 => 26,  58 => 24,  55 => 23,  51 => 22,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'BackOfficebackBundle::Layout.html.twig' %}*/
@@ -147,6 +148,7 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
 /*                 */
 /*                 <th>Id</th>*/
 /*                 <th>Actions</th>*/
+/*                 */
 /*             </tr>*/
 /*         </thead>*/
 /*         <tbody>*/
@@ -165,10 +167,10 @@ class __TwigTemplate_5347245071f62a20883f18b822e20b72f0106cb2db734b3903e9dec1962
 /*                 <td>*/
 /*                 <ul>*/
 /*                     <li>*/
-/*                         <a href="{{ path('fosuser_show', { 'id': entity.id }) }}">Desactiver</a>*/
+/*                         <a href="{{ path('fosuser_show', { 'id': entity.id }) }}"><i class="fa fa-close" aria-hidden="true"></i></a>*/
 /*                     </li>*/
 /*                     <li>*/
-/*                         <a href="{{ path('fosuser_edit', { 'id': entity.id }) }}">Activer</a>*/
+/*                         <a href="{{ path('fosuser_edit', { 'id': entity.id }) }}"><i class="fa fa-check" aria-hidden="true"></i></a>*/
 /*                     </li>*/
 /*                 </ul>*/
 /*                 </td>*/

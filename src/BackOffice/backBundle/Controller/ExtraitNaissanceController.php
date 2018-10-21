@@ -59,7 +59,7 @@ class ExtraitNaissanceController extends Controller {
         $em->persist($entity);
         $em->flush();
         
-        return $this->render("BackOfficebackBundle:frontOffice:b3dem.html.twig");
+        return $this->render('demandeextrait_show');
 
 
         return array(

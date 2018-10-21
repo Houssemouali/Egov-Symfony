@@ -86,13 +86,13 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
                         <a href=\"";
             // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_create", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">Creer</a>
+            echo "\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></a>
                     </li>
                     <li>
                         <a href=\"";
             // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("back_officeback_extraitnaissance_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">Refuser</a>
+            echo "\"><i class=\"fa fa-close\" aria-hidden=\"true\"></i></a>
                     </li>
                 </ul>
                 </td>
@@ -170,10 +170,10 @@ class __TwigTemplate_ddd67a2096c929f31d6eec1527b9d2506f997bbe3723b2ca447f21f422d
 /*                 <td>*/
 /*                 <ul>*/
 /*                     <li>*/
-/*                         <a href="{{ path('back_officeback_extraitnaissance_create', { 'id': entity.id }) }}">Creer</a>*/
+/*                         <a href="{{ path('back_officeback_extraitnaissance_create', { 'id': entity.id }) }}"><i class="fa fa-check" aria-hidden="true"></i></a>*/
 /*                     </li>*/
 /*                     <li>*/
-/*                         <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}">Refuser</a>*/
+/*                         <a href="{{ path('back_officeback_extraitnaissance_edit', { 'id': entity.id }) }}"><i class="fa fa-close" aria-hidden="true"></i></a>*/
 /*                     </li>*/
 /*                 </ul>*/
 /*                 </td>*/

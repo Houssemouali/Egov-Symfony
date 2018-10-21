@@ -1,0 +1,81 @@
+<?php
+
+namespace BackOffice\backBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ExtraitNaissance
+ *
+ * @ORM\Table(name="extrait_naissance")
+ * @ORM\Entity
+ */
+class ExtraitNaissance
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=20, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=20, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomPere", type="string", length=20, nullable=false)
+     */
+    private $nompere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomMere", type="string", length=20, nullable=false)
+     */
+    private $nommere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_naissance", type="string", length=20, nullable=false)
+     */
+    private $adresseNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sex", type="string", length=20, nullable=false)
+     */
+    private $sex;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_naissance", type="date", nullable=false)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationalite", type="string", length=20, nullable=false)
+     */
+    private $nationalite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

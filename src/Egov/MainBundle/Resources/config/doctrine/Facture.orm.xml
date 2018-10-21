@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Egov\MainBundle\Entity\Facture" table="facture">
+    <indexes>
+      <index name="cin" columns="cin"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id_Facture" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="type" type="string" column="Type" length="25" nullable="false"/>
+    <field name="montant" type="integer" column="Montant" nullable="false"/>
+    <field name="payeravant" type="date" column="PayerAvant" nullable="false"/>
+    <field name="etat" type="string" column="etat" length="255" nullable="false"/>
+    <field name="commentaire" type="string" column="commentaire" length="200" nullable="true"/>
+    <many-to-one field="cin" target-entity="Cin">
+      <join-columns>
+        <join-column name="cin" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

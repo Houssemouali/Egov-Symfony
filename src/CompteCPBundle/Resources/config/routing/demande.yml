@@ -1,0 +1,29 @@
+demande_cpp:
+    path:     /CPP
+    defaults: { _controller: "CompteCPBundle:Demande:indexCPP" }
+demande_cin:
+    path:     /Cin
+    defaults: { _controller: "CompteCPBundle:Demande:indexCin" }
+demande_b3:
+    path:     /b3
+    defaults: { _controller: "CompteCPBundle:Demande:indexB3" }
+
+demande_valider:
+    path:     /{id}/valider
+    defaults: { _controller: "CompteCPBundle:Demande:valider" }
+    
+demande_validercin:
+    path:     /{id}/validercin
+    defaults: { _controller: "CompteCPBundle:Demande:validerCin" }
+    
+demande_ajoutCin:
+    path:     /{id}/ajoutCin
+    defaults: { _controller: "CompteCPBundle:Demande:newCin" }
+
+demande_commenter:
+    path:     /{id}/commenter
+    defaults: { _controller: "CompteCPBundle:Demande:commenter" }
+    
+demande_newCPP:
+    path:     /newCPP
+    defaults: { _controller: "CompteCPBundle:Demande:newCPP" }

@@ -9,7 +9,16 @@ my_app_user:
 back_officeback:
     resource: "@BackOfficebackBundle/Resources/config/routing.yml"
     prefix:   /back
+inter_cin:
+    resource: "@InterCinBundle/Resources/config/routing.yml"
+    prefix:   /
 
+compte_cp:
+    resource: "@CompteCPBundle/Resources/config/routing.yml"
+    prefix:   /
+egov_main:
+    resource: "@EgovMainBundle/Resources/config/routing.yml"
+    prefix:   /
 app:
     resource: @AppBundle/Controller/
     type:     annotation

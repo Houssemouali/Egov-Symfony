@@ -7,8 +7,8 @@ class __TwigTemplate_d3ab157fe9556c9cac59179091a9a0ad8dac4ded8c9a53d12cad790f699
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Registration:confirmed.html.twig", 1);
+        // line 3
+        $this->parent = $this->loadTemplate("MyAppUserBundle:Default:loginInscription.html.twig", "FOSUserBundle:Registration:confirmed.html.twig", 3);
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
@@ -16,7 +16,7 @@ class __TwigTemplate_d3ab157fe9556c9cac59179091a9a0ad8dac4ded8c9a53d12cad790f699
 
     protected function doGetParent(array $context)
     {
-        return "FOSUserBundle::layout.html.twig";
+        return "MyAppUserBundle:Default:loginInscription.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -28,9 +28,7 @@ class __TwigTemplate_d3ab157fe9556c9cac59179091a9a0ad8dac4ded8c9a53d12cad790f699
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 6
-        echo "    <p>";
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.confirmed", array("%username%" => $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array())), "FOSUserBundle"), "html", null, true);
-        echo "</p>
+        echo "    <p>Votre compte est deja crée , Attendez l'activation de la part de l'administrateur</p>
     ";
         // line 7
         if ((isset($context["targetUrl"]) ? $context["targetUrl"] : $this->getContext($context, "targetUrl"))) {
@@ -56,15 +54,15 @@ class __TwigTemplate_d3ab157fe9556c9cac59179091a9a0ad8dac4ded8c9a53d12cad790f699
 
     public function getDebugInfo()
     {
-        return array (  38 => 8,  36 => 7,  31 => 6,  28 => 5,  11 => 1,);
+        return array (  36 => 8,  34 => 7,  31 => 6,  28 => 5,  11 => 3,);
     }
 }
-/* {% extends "FOSUserBundle::layout.html.twig" %}*/
 /* */
 /* {% trans_default_domain 'FOSUserBundle' %}*/
+/* {% extends "MyAppUserBundle:Default:loginInscription.html.twig" %}*/
 /* */
 /* {% block fos_user_content %}*/
-/*     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>*/
+/*     <p>Votre compte est deja crée , Attendez l'activation de la part de l'administrateur</p>*/
 /*     {% if targetUrl %}*/
 /*     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>*/
 /*     {% endif %}*/

@@ -1,0 +1,49 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Compte
+ *
+ * @ORM\Table(name="compte", indexes={@ORM\Index(name="user", columns={"cin"})})
+ * @ORM\Entity
+ */
+class Compte
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_compte", type="string", length=50, nullable=false)
+     */
+    private $numCompte;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="montant", type="integer", nullable=false)
+     */
+    private $montant;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin", referencedColumnName="id")
+     * })
+     */
+    private $cin;
+
+
+}

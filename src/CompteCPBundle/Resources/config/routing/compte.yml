@@ -1,0 +1,31 @@
+compte:
+    path:     /
+    defaults: { _controller: "CompteCPBundle:Compte:index" }
+
+compte_show:
+    path:     /{id}/show
+    defaults: { _controller: "CompteCPBundle:Compte:show" }
+
+compte_new:
+    path:     /new
+    defaults: { _controller: "CompteCPBundle:Compte:new" }
+
+compte_create:
+    path:     /create
+    defaults: { _controller: "CompteCPBundle:Compte:create" }
+
+compte_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CompteCPBundle:Compte:edit" }
+
+compte_update:
+    path:     /{id}/update
+    defaults: { _controller: "CompteCPBundle:Compte:update" }
+    requirements: { _method: post|put }
+
+compte_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CompteCPBundle:Compte:delete" }
+    requirements: { _method: post|delete }
+    
+

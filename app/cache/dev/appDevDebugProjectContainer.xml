@@ -21,6 +21,10 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="MyAppUserBundle">MyApp\UserBundle\MyAppUserBundle</parameter>
       <parameter key="FrontOfficeBundle">FrontOfficeBundle\FrontOfficeBundle</parameter>
+      <parameter key="CompteCPBundle">CompteCPBundle\CompteCPBundle</parameter>
+      <parameter key="EgovMainBundle">Egov\MainBundle\EgovMainBundle</parameter>
+      <parameter key="InterCinBundle">Inter\CinBundle\InterCinBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -296,7 +300,7 @@
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
-      <parameter key="ROLE_USER" type="collection">
+      <parameter key="ROLE_CLIENT" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
@@ -647,6 +651,12 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="knp_paginator.class">Knp\Component\Pager\Paginator</parameter>
+    <parameter key="knp_paginator.helper.processor.class">Knp\Bundle\PaginatorBundle\Helper\Processor</parameter>
+    <parameter key="knp_paginator.template.pagination">KnpPaginatorBundle:Pagination:twitter_bootstrap_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -2971,6 +2981,14 @@
         <argument>0</argument>
       </call>
       <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sliding_pagination</argument>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
         <argument>kernel.controller</argument>
         <argument type="collection">
           <argument>acme.demo.listener</argument>
@@ -3090,6 +3108,46 @@
         <argument>web_profiler.debug_toolbar</argument>
         <argument>Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener</argument>
       </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.paginate</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.paginate</argument>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sortable</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.filtration</argument>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument>knp_paginator.subscriber.sliding_pagination</argument>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
       <argument type="service">
@@ -3126,7 +3184,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5731f616e60d10.04441876</argument>
+            <argument>57437a53481782.25497551</argument>
           </service>
         </argument>
       </argument>
@@ -3177,7 +3235,7 @@
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
       <argument type="collection">
-        <argument key="ROLE_USER" type="collection">
+        <argument key="ROLE_CLIENT" type="collection">
           <argument>ROLE_USER</argument>
         </argument>
         <argument key="ROLE_SUPER_ADMIN" type="collection">
@@ -3227,7 +3285,7 @@
       <argument type="service" id="router"/>
       <call method="registerListener">
         <argument>main</argument>
-        <argument>/logout</argument>
+        <argument>logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
@@ -3288,6 +3346,17 @@
                   </argument>
                   <argument>null</argument>
                 </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/affichage</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_CLIENT</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
               </service>
             </argument>
             <argument type="service">
@@ -3327,13 +3396,13 @@
                     <argument type="service" id="router" on-invalid="null"/>
                   </service>
                 </argument>
-                <argument>/</argument>
+                <argument>/login</argument>
               </service>
             </argument>
             <argument type="collection">
               <argument key="csrf_parameter">_csrf_token</argument>
               <argument key="intention">logout</argument>
-              <argument key="logout_path">/logout</argument>
+              <argument key="logout_path">logout</argument>
             </argument>
             <call method="addHandler">
               <argument type="service">
@@ -3356,26 +3425,16 @@
             </argument>
             <argument>main</argument>
             <argument type="service">
-              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
-                <argument type="service">
-                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                    <argument type="service" id="router" on-invalid="null"/>
-                    <argument type="service" id="router" on-invalid="null"/>
-                  </service>
+              <service class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler" public="false">
+                <argument type="service" id="redirect.after.login"/>
+                <argument type="collection">
+                  <argument key="login_path">fos_user_security_login</argument>
+                  <argument key="always_use_default_target_path">false</argument>
+                  <argument key="default_target_path">/</argument>
+                  <argument key="target_path_parameter">_target_path</argument>
+                  <argument key="use_referer">false</argument>
                 </argument>
-                <argument type="collection"/>
-                <call method="setOptions">
-                  <argument type="collection">
-                    <argument key="always_use_default_target_path">false</argument>
-                    <argument key="default_target_path">/</argument>
-                    <argument key="login_path">/login</argument>
-                    <argument key="target_path_parameter">_target_path</argument>
-                    <argument key="use_referer">false</argument>
-                  </argument>
-                </call>
-                <call method="setProviderKey">
-                  <argument>main</argument>
-                </call>
+                <argument>main</argument>
               </service>
             </argument>
             <argument type="service">
@@ -3391,7 +3450,7 @@
                 <argument type="service" id="monolog.logger.security" on-invalid="null"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="login_path">/login</argument>
+                    <argument key="login_path">fos_user_security_login</argument>
                     <argument key="failure_path">null</argument>
                     <argument key="failure_forward">false</argument>
                     <argument key="failure_path_parameter">_failure_path</argument>
@@ -3400,7 +3459,7 @@
               </service>
             </argument>
             <argument type="collection">
-              <argument key="check_path">/login_check</argument>
+              <argument key="check_path">fos_user_security_check</argument>
               <argument key="use_forward">false</argument>
               <argument key="require_previous_session">true</argument>
               <argument key="username_parameter">_username</argument>
@@ -3417,7 +3476,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5731f616e60d10.04441876</argument>
+            <argument>57437a53481782.25497551</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3473,6 +3532,17 @@
                   </argument>
                   <argument>null</argument>
                 </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/affichage</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_CLIENT</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
               </service>
             </argument>
             <argument type="service" id="security.authentication.manager"/>
@@ -3499,7 +3569,7 @@
                   <argument type="service" id="router" on-invalid="null"/>
                 </service>
               </argument>
-              <argument>/login</argument>
+              <argument>fos_user_security_login</argument>
               <argument>false</argument>
             </service>
           </argument>
@@ -3666,6 +3736,9 @@
             <tag name="twig.extension"/>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -3936,6 +4009,9 @@
               <argument key="BackOfficebackBundle">BackOffice\backBundle\Entity</argument>
               <argument key="MyAppUserBundle">MyApp\UserBundle\Entity</argument>
               <argument key="FrontOfficeBundle">FrontOfficeBundle\Entity</argument>
+              <argument key="CompteCPBundle">CompteCPBundle\Entity</argument>
+              <argument key="EgovMainBundle">Egov\MainBundle\Entity</argument>
+              <argument key="InterCinBundle">Inter\CinBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -3955,6 +4031,9 @@
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
                         <argument key="C:\wamp\www\pidevweb\src\BackOffice\backBundle\Resources\config\doctrine">BackOffice\backBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\CompteCPBundle\Resources\config\doctrine">CompteCPBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Egov\MainBundle\Resources\config\doctrine">Egov\MainBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Inter\CinBundle\Resources\config\doctrine">Inter\CinBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -3962,6 +4041,54 @@
                     </service>
                   </argument>
                   <argument>BackOffice\backBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\wamp\www\pidevweb\src\BackOffice\backBundle\Resources\config\doctrine">BackOffice\backBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\CompteCPBundle\Resources\config\doctrine">CompteCPBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Egov\MainBundle\Resources\config\doctrine">Egov\MainBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Inter\CinBundle\Resources\config\doctrine">Inter\CinBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>CompteCPBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\wamp\www\pidevweb\src\BackOffice\backBundle\Resources\config\doctrine">BackOffice\backBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\CompteCPBundle\Resources\config\doctrine">CompteCPBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Egov\MainBundle\Resources\config\doctrine">Egov\MainBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Inter\CinBundle\Resources\config\doctrine">Inter\CinBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Egov\MainBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\wamp\www\pidevweb\src\BackOffice\backBundle\Resources\config\doctrine">BackOffice\backBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\CompteCPBundle\Resources\config\doctrine">CompteCPBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Egov\MainBundle\Resources\config\doctrine">Egov\MainBundle\Entity</argument>
+                        <argument key="C:\wamp\www\pidevweb\src\Inter\CinBundle\Resources\config\doctrine">Inter\CinBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Inter\CinBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -4087,6 +4214,9 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
+    <service id="redirect.after.login" class="MyApp\UserBundle\Redirection\AfterLoginRedirection">
+      <argument type="service" id="router"/>
+    </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.user_manager"/>
@@ -4177,6 +4307,46 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">KnpPaginatorBundle:Pagination:twitter_bootstrap_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">KnpPaginatorBundle:Pagination:sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">KnpPaginatorBundle:Pagination:filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
@@ -4519,11 +4689,9 @@
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
       <argument type="collection">
         <argument key="FOS\UserBundle\Model\UserInterface" type="collection">
-          <argument key="class">%security.encoder.digest.class%</argument>
+          <argument key="class">%security.encoder.bcrypt.class%</argument>
           <argument key="arguments" type="collection">
-            <argument>sha512</argument>
-            <argument>true</argument>
-            <argument>5000</argument>
+            <argument>13</argument>
           </argument>
         </argument>
       </argument>
@@ -4570,6 +4738,22 @@
       <call method="addPath">
         <argument>C:\wamp\www\pidevweb\src\FrontOfficeBundle/Resources/views</argument>
         <argument>FrontOffice</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\pidevweb\src\CompteCPBundle/Resources/views</argument>
+        <argument>CompteCP</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\pidevweb\src\Egov\MainBundle/Resources/views</argument>
+        <argument>EgovMain</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\pidevweb\src\Inter\CinBundle/Resources/views</argument>
+        <argument>InterCin</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\pidevweb\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\pidevweb\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

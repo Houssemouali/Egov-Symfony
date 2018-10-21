@@ -1,0 +1,55 @@
+egovhich_main_homepage:
+    path:   /Front/indus
+    defaults: { _controller: EgovMainBundle:Default:index }
+egov_main_addauto:
+ path:     /Front/indus/addauto
+ defaults: { _controller: EgovMainBundle:Autorisation:AddAutoFront }
+egov_main_addcin:
+ path:     /Front/addcin
+ defaults: { _controller: EgovMainBundle:Autorisation:AddCINFront }
+egov_main_listautosfront:
+ path:     /Front/indus/listautos
+ defaults: { _controller: EgovMainBundle:Autorisation:listfrontautos }
+egov_back_home:
+ path:     /Back
+ defaults: { _controller: EgovMainBundle:Autorisation:Back }
+egov_back_addcin:
+ path:     /Back/addcin
+ defaults: { _controller: EgovMainBundle:Autorisation:AddCINBack }
+egov_back_addauto:
+ path:     /Back/addauto
+ defaults: { _controller: EgovMainBundle:Autorisation:AddAutoBack }
+egov_back_listauto:
+ path:     /Back/listauto
+ defaults: { _controller: EgovMainBundle:Autorisation:ListAutoBack }
+egov_back_listcin_cin:
+ path:     /Back/listcin
+ defaults: { _controller: EgovMainBundle:Autorisation:ListCinBack }
+egov_Back_suppCin:
+ path:     /Back/suppCin/{id}
+ defaults: { _controller: EgovMainBundle:Autorisation:suppCinBack }
+cin_update:
+ path:     /Back/cinupdate
+ defaults: { _controller: EgovMainBundle:Autorisation:updateCin }
+auto_update:
+ path:     /Back/autoupdate
+ defaults: { _controller: EgovMainBundle:Autorisation:update }
+egov_back_addfac:
+ path:     /Back/addfac
+ defaults: { _controller: EgovMainBundle:Facture:ajoutFac }
+egov_Front_ListSteg:
+ path:     /Front/indus/liststeg
+ defaults: { _controller: EgovMainBundle:Facture:listSTEGE }
+egov_Front_ListSonede:
+ path:     /Front/indus/listsonede
+ defaults: { _controller: EgovMainBundle:Facture:listSONEDEE }
+egov_Back_suppFac:
+ path:     /Back/suppfac/{id}
+ defaults: { _controller: EgovMainBundle:Facture:suppFacBack }
+egov_Back_listSteg:
+ path:     /Back/liststeg
+ defaults: { _controller: EgovMainBundle:Facture:listSTEGBack }
+egov_Back_listSonede:
+ path:     /Back/listsonede
+ defaults: { _controller: EgovMainBundle:Facture:listSONEDEBack }
+

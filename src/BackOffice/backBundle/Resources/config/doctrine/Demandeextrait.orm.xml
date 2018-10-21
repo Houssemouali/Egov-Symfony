@@ -4,6 +4,7 @@
     <indexes>
       <index name="cin_pere" columns="cin_pere"/>
       <index name="cin_mere" columns="cin_mere"/>
+      <index name="user" columns="user"/>
     </indexes>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
@@ -22,6 +23,11 @@
     <many-to-one field="cinPere" target-entity="Cin">
       <join-columns>
         <join-column name="cin_pere" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="user" target-entity="FosUser">
+      <join-columns>
+        <join-column name="user" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

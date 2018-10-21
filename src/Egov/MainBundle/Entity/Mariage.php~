@@ -1,0 +1,52 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Mariage
+ *
+ * @ORM\Table(name="mariage", indexes={@ORM\Index(name="cin_homme", columns={"cin_homme"}), @ORM\Index(name="cin_femme", columns={"cin_femme"})})
+ * @ORM\Entity
+ */
+class Mariage
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_mariage", type="date", nullable=false)
+     */
+    private $dateMariage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin_femme", referencedColumnName="id")
+     * })
+     */
+    private $cinFemme;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin_homme", referencedColumnName="id")
+     * })
+     */
+    private $cinHomme;
+
+
+}

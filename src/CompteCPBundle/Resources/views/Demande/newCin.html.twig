@@ -1,0 +1,14 @@
+{% extends 'CompteCPBundle::base.html.twig' %}
+
+
+{% block body -%}
+    <div id="content" class="span10">
+
+        <form method="POST" action="{{path('demande_validercin',{'id':entities.id})}}">
+            Lieu de creation<input type="text" name="lieu">
+            Date de creation<input type="text" name="date">
+            <input type="submit">
+        </form>
+    </div>
+
+{% endblock %}

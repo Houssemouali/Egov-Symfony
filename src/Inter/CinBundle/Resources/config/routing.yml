@@ -1,0 +1,32 @@
+inter_cin_homepage:
+    path:     /hello/x/{name}
+    defaults: { _controller: InterCinBundle:Default:index }
+inter_cin_backpage:
+    path:     /back/inter
+    defaults: { _controller: InterCinBundle:Cin:back }
+egov_back_listcin_cine:
+ path:     /Back/Inter/listcin
+ defaults: { _controller: InterCinBundle:Cin:ListCinBack }
+inter_Back_suppCin:
+ path:     /Back/Inter/suppCin/{id}
+ defaults: { _controller: InterCinBundle:Cin:suppCinBack }
+inter_cin_update:
+ path:     /Back/Inter/cinupdate
+ defaults: { _controller: InterCinBundle:Cin:updateCin }
+ 
+inter_cin_frontajout:
+ path:     /front/Inter/ajoucin
+ defaults: { _controller: InterCinBundle:Cin:AjoutCINFront }
+ 
+egov_front_homepage:
+    path:     /front
+    defaults: { _controller: InterCinBundle:Default:index }
+my_app_mail_succ:
+    path: /succ
+    defaults: { _controller: InterCinBundle:Mail:index }
+my_app_mail_form:
+    path: /mail
+    defaults: { _controller: InterCinBundle:Mail:new }
+my_app_mail_sendpage:
+    path: /sendmail
+    defaults: { _controller: InterCinBundle:Mail:SendMail }

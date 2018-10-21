@@ -9,27 +9,39 @@
 namespace FrontOfficeBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use BackOffice\backBundle\Entity\Extraitnaissances;
+use BackOffice\backBundle\Entity\Demandeextrait;
 
 class ExtraitNaissance2Controller extends \Symfony\Bundle\FrameworkBundle\Controller\Controller {
 
     public function newAction(Request $r) {
-        if ($r->getMethod() == "POST") {
 
-            $m1 = new Extraitnaissances();
+        if ($r->getMethod() == "POST") {
+            $em = $this->getDoctrine()->getManager();
+            $m1 = new Demandeextrait();
 
             $m1->setNom($r->get("nom"));
             $m1->setPrenom($r->get("prenom"));
-            $m1->setPere($r->get("nom_pere"));
-            $m1->setMere($r->get("nom_mere"));
-            $m1->setVilleNaissance(new \DateTime($r->get("ville_naissance")));
-            $m1->setDateNaissance($r->get("date_naissance"));
-            $m1->setSexe($r->get("sex"));
-            $m1->setSexe($r->get("etat"));
-            $em = $this->getDoctrine()->getManager();
+            
+            $cin = $em->getRepository('BackOfficebackBundle:Cin')->findOneBy(array('numCin' => $r->get("pere")));
+            $m1->setCinPere($cin);
+            
+            $cin = $em->getRepository('BackOfficebackBundle:Cin')->findOneBy(array('numCin' => $r->get("mere")));
+            $m1->setCinMere($cin);
+
+            $m1->setLieuNaissance($r->get("lieu"));
+            $m1->setDateNaissance(new \DateTime($r->get("date")));
+            
+            
+            $m1->setCommentaire("vvv");
+            $m1->setEtat("");
+            $user = $this->container->get('security.context')->getToken()->getUser();
+            
+            $u = $em->getRepository('BackOfficebackBundle:FosUser')->find($user->getId());
+            
+            $m1->setUser($u);
+            
             $em->persist($m1);
             $em->flush();
-           return new Response("nouveau demande crée ".$m1->getId());
         }
         return $this->render("FrontOfficeBundle:frontoff:demcin.html.twig");
     }

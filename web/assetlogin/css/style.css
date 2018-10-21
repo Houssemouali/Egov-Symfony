@@ -6,6 +6,9 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
+    background: url('../img/tunisie.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 strong { font-weight: 500; }

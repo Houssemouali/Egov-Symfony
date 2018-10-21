@@ -139,40 +139,14 @@ class __TwigTemplate_2af3446f6aa417b41ce855925954dbaed8fb98a5edfa857b53c08daa51c
                         \t
                         <div class=\"col-sm-5\">
                         \t
-                        \t<div class=\"form-box\">
-                        \t\t<div class=\"form-top\">
-\t                        \t\t<div class=\"form-top-left\">
-\t                        \t\t\t<h3>Sign up now</h3>
-\t                            \t\t
-\t                        \t\t</div>
-\t                        \t\t<div class=\"form-top-right\">
-\t                        \t\t\t<i class=\"fa fa-pencil\"></i>
-\t                        \t\t</div>
-\t                            </div>
-\t                            <div class=\"form-bottom\">
-\t\t\t\t                    <form role=\"form\" action=\"\" method=\"post\" class=\"registration-form\">
-\t\t\t\t                    \t<div class=\"form-group\">
-                                            <label class=\"sr-only\" for=\"form-email\">Email</label>
-                                            <input type=\"text\" name=\"form-email\" placeholder=\"Email...\" class=\"form-email form-control\" id=\"form-email\">
-                                        </div>
-\t\t\t\t                        <div class=\"form-group\">
-\t\t\t\t                        \t<label class=\"sr-only\" for=\"form-last-name\">Last name</label>
-\t\t\t\t                        \t<input type=\"text\" name=\"form-last-name\" placeholder=\"nom d utilisateur...\" class=\"form-last-name form-control\" id=\"form-last-name\">
-\t\t\t\t                        </div>
-\t\t\t\t                        <div class=\"form-group\">
-                                            <label class=\"sr-only\" for=\"form-password\">Password</label>
-                                            <input type=\"password\" name=\"form-password\" placeholder=\"Mot de passe ...\" class=\"form-password form-control\" id=\"form-password\">
-                                        </div>
-\t\t\t\t                         <div class=\"form-group\">
-                                            <label class=\"sr-only\" for=\"form-password\">Password</label>
-                                            <input type=\"password\" name=\"form-password\" placeholder=\"Mot de passe de nouveau...\" class=\"form-password form-control\" id=\"form-password\">
-                                        </div>
-\t\t\t\t                        <button type=\"submit\" class=\"btn\">inscription!</button>
-\t\t\t\t                    </form>
-\t\t\t                    </div>
-                        \t</div>
-                        \t
-                        </div>
+     ";
+        // line 105
+        echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('routing')->getUrl("fos_user_registration_register"), array());
+        // line 106
+        echo "                        
+";
+        // line 126
+        echo "                        </div>
                     </div>
                     
                 </div>
@@ -197,25 +171,25 @@ class __TwigTemplate_2af3446f6aa417b41ce855925954dbaed8fb98a5edfa857b53c08daa51c
 
         <!-- Javascript -->
         <script src=\"";
-        // line 162
+        // line 150
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetlogin/js/jquery-1.11.1.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 163
+        // line 151
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetlogin/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 164
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetlogin/js/jquery.backstretch.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 165
+        // line 153
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetlogin/js/scripts.js"), "html", null, true);
         echo "\"></script>
         
         <!--[if lt IE 10]>
             <script src=\"";
-        // line 168
+        // line 156
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assetlogin/js/placeholder.js"), "html", null, true);
         echo "\"> </script>
         <![endif]-->
@@ -244,7 +218,7 @@ class __TwigTemplate_2af3446f6aa417b41ce855925954dbaed8fb98a5edfa857b53c08daa51c
 
     public function getDebugInfo()
     {
-        return array (  232 => 65,  229 => 64,  219 => 168,  213 => 165,  209 => 164,  205 => 163,  201 => 162,  116 => 79,  114 => 66,  112 => 64,  75 => 30,  71 => 29,  67 => 28,  63 => 27,  59 => 26,  46 => 16,  42 => 15,  38 => 14,  34 => 13,  20 => 1,);
+        return array (  206 => 65,  203 => 64,  193 => 156,  187 => 153,  183 => 152,  179 => 151,  175 => 150,  149 => 126,  146 => 106,  144 => 105,  116 => 79,  114 => 66,  112 => 64,  75 => 30,  71 => 29,  67 => 28,  63 => 27,  59 => 26,  46 => 16,  42 => 15,  38 => 14,  34 => 13,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -351,22 +325,11 @@ class __TwigTemplate_2af3446f6aa417b41ce855925954dbaed8fb98a5edfa857b53c08daa51c
 /*                         	*/
 /*                         <div class="col-sm-5">*/
 /*                         	*/
-/*                         	<div class="form-box">*/
-/*                         		<div class="form-top">*/
-/* 	                        		<div class="form-top-left">*/
-/* 	                        			<h3>Sign up now</h3>*/
-/* 	                            		*/
-/* 	                        		</div>*/
-/* 	                        		<div class="form-top-right">*/
-/* 	                        			<i class="fa fa-pencil"></i>*/
-/* 	                        		</div>*/
-/* 	                            </div>*/
-/* 	                            <div class="form-bottom">*/
-/* 				                    <form role="form" action="" method="post" class="registration-form">*/
-/* 				                    	<div class="form-group">*/
-/*                                             <label class="sr-only" for="form-email">Email</label>*/
-/*                                             <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">*/
-/*                                         </div>*/
+/*      {% render url('fos_user_registration_register') %}*/
+/*                         */
+/* {#                        		*/
+/* 	                           */
+/* 				                    */
 /* 				                        <div class="form-group">*/
 /* 				                        	<label class="sr-only" for="form-last-name">Last name</label>*/
 /* 				                        	<input type="text" name="form-last-name" placeholder="nom d utilisateur..." class="form-last-name form-control" id="form-last-name">*/
@@ -382,8 +345,7 @@ class __TwigTemplate_2af3446f6aa417b41ce855925954dbaed8fb98a5edfa857b53c08daa51c
 /* 				                        <button type="submit" class="btn">inscription!</button>*/
 /* 				                    </form>*/
 /* 			                    </div>*/
-/*                         	</div>*/
-/*                         	*/
+/*                         	</div>#}*/
 /*                         </div>*/
 /*                     </div>*/
 /*                     */

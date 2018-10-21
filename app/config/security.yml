@@ -1,9 +1,9 @@
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: sha512
+        FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_USER:       ROLE_USER
+        ROLE_CLIENT:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
         ROLE_AGENT_MUNICIPALITE: ROLE_MUNICIPALITE
         ROLE_AGENT_INTERIEUR: ROLE_INTERIEUR
@@ -19,10 +19,13 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-                # if you are using Symfony < 2.8, use the following config instead:
-                # csrf_provider: form.csrf_provider
+                success_handler: redirect.after.login
+                login_path:             fos_user_security_login 
+                check_path:             fos_user_security_check
 
-            logout:       true
+            logout:       
+                path: logout
+                target: /login
             anonymous:    true
 
     access_control:
@@ -30,3 +33,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/affichage, role: ROLE_CLIENT }

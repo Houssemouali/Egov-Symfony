@@ -1,0 +1,36 @@
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+{%block body %}
+<html>
+    <body>
+       <center><h1><b>Ajout d'une Autorisation</b></h1>
+           <br>
+           <br>
+           
+<form method="POST">
+    <label for="Cin">Carte d'Identité Nationale</label>
+    <input type="number" name="Cin" />
+    <br>
+           <br>
+           <br>
+           
+    
+    <label for="CarteGrise">Carte Grise</label>
+    <input type="number" name="CarteGrise"/>
+    <br>
+           <br>
+           <br>
+           
+    <label for="Cpp">Compte Postal</label>
+    <input type="number" name="Cpp"/>
+    <br>
+           <br>
+           <br>
+           
+    <p>
+   <input class="btn btn-large btn-info" type="submit" value="AJOUTER AUTORISATION"/>
+</form>
+                   </center>
+
+    </body>
+</html>
+{% endblock %}

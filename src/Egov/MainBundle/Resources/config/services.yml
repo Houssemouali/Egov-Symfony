@@ -1,0 +1,4 @@
+services:
+#    egov_main.example:
+#        class: Egov\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

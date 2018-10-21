@@ -20,7 +20,7 @@ class DemandeextraitController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BackOfficebackBundle:Demandeextrait')->findAll();
+        $entities = $em->getRepository('BackOfficebackBundle:Demandeextrait')->findBy(array('commentaire'=>"vvv"));
 
         return $this->render('BackOfficebackBundle:Demandeextrait:index.html.twig', array(
                     'entities' => $entities,
@@ -44,13 +44,13 @@ class DemandeextraitController extends Controller {
         $entity->setCinMere($cin);
         $cin = $em->getRepository('BackOfficebackBundle:Cin')->findOneBy(array('numCin'=>$request->get('pere')));
         $entity->setCinPere($cin);
-        $entity->setCommentaire("");
-        $entity->setEtat("En Cours");
+        $entity->setCommentaire("Valide");
+        $entity->setEtat("Celibataire");
 
         $entity->setDateNaissance(new \DateTime($request->get('date')));
         $em->persist($entity);
         $em->flush();
-        return $this->redirect($this->generateUrl('demandeextrait_show'));
+        return $this->redirect($this->generateUrl('front_office_new'));
     }
 
     /**

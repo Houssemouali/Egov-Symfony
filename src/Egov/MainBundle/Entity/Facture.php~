@@ -1,0 +1,70 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Facture
+ *
+ * @ORM\Table(name="facture", uniqueConstraints={@ORM\UniqueConstraint(name="id_Facture", columns={"id"})}, indexes={@ORM\Index(name="cin", columns={"cin"})})
+ * @ORM\Entity
+ */
+class Facture
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=25, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Montant", type="integer", nullable=false)
+     */
+    private $montant;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="PayerAvant", type="date", nullable=false)
+     */
+    private $payeravant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=255, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=200, nullable=true)
+     */
+    private $commentaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Egov\MainBundle\Entity\Cin
+     *
+     * @ORM\ManyToOne(targetEntity="Egov\MainBundle\Entity\Cin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cin", referencedColumnName="id")
+     * })
+     */
+    private $cin;
+
+
+}

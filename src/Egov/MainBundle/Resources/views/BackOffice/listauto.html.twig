@@ -1,0 +1,122 @@
+{%extends "EgovMainBundle:BackOffice:base.html.twig"%}
+
+{%block body %} 
+                                  
+<html>
+    <body>
+        
+            
+	
+	<table class="table table-bordered table-striped table-condensed table-hover">
+            <!--/table table-bordered table-striped table-condensedtable-hover!-->
+            <thead>
+            <tr>
+                <td class="center">{{knp_pagination_sortable(pagination, '', 'a.id') }}<b>Numéro d'Identification</b></td>
+    <td align="center"{% if pagination.isSorted('a.cin') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.cin') }}<b>Carte d'Identité Nationale</b></td>
+    <td class="center"{% if pagination.isSorted('a.CarteGrise') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.CarteGrise') }}<b>Numéro de la Carte Grise</b></td>
+    <td class="center"{% if pagination.isSorted('a.Cpp') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.Cpp') }}<b>Compte Postal<b></td>
+    <td class="center"{% if pagination.isSorted('a.FinAutorisation') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, '', 'a.FinAutorisation') }}<b>Fin Délai d'Autorisation</b></td>
+    <td><b>Action</b></td>
+     
+    
+</tr>
+	    </thead>   
+             <tbody>
+                {% for auto in pagination %}
+                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    <td class="center">{{auto.id}}</td>
+                    <td class="center">{{auto.cin.numCin}}</td>
+                    <td class="center">{{auto.CarteGrise}}</td>
+                      <td class="center">{{auto.Cpp.numCompte}}</td>
+                       <td class="center">{{auto.FinAutorisation|date('d/m/Y')}}</td>
+                       
+                       <td>
+                    <a class="btn btn-success" href="#" data-target="#myModal" data-id="{{auto.id}}" data-etat="{{auto.etat}}" data-commentaire="{{auto.commentaire}}">
+                            <i class="halflings-icon white zoom-in"></i>   
+                        </a>
+                    </td>
+                       
+                    </tr>
+						  </tbody>
+                  
+                  
+                    {%endfor%}
+          
+        </table>
+                    
+       <div class="modal fade hide" id="myModal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Settings</h3>
+		</div>
+		<div class="modal-body">
+                    <form id="form">
+                        <input id="ipt-id" name="ipt-id" type="hidden"/>
+                        <label>Etat </label><select name="ipt-etat" id="ipt-etat" type="text" >
+                            <option value="en cours">en cours</option>
+                            <option value="accept">Accepté</option>
+                            <option value="refus">Refusé</option>
+
+                        </select>
+                      
+                        <label>Commentaire </label><input name="ipt-comm" id="ipt-comm" type="text"/>
+                    </form>
+                    
+                       
+                    
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+			<a href="#" class="btn btn-primary" id="save_btn">Save changes</a>
+		</div>
+	</div>
+            <div class="clearfix"></div>
+            <span style="z-index: 100;position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);" id="loading"></span>
+        <div class="navigation">
+		 {{ knp_pagination_render(pagination) }}
+        </div>			
+ 
+ 
+    </body>
+</html>
+
+{% endblock %}
+{% block javascript %}
+    <script language="javascript" type="text/javascript">
+    $(function() { 
+        var current_item=null;
+        $('.btn-success').click(function(e){
+		e.preventDefault();
+                //recuperer id
+                $("#ipt-id").val($(this).data("id"));
+                $("#ipt-etat").val($(this).data("etat"));
+                 $("#ipt-comm").val($(this).data("commentaire"));
+		$('#myModal').modal('show');
+                current_item=this;
+	});
+       
+        $('#save_btn').click(function(e){
+            e.preventDefault();
+             $("#loading").html('<img src="{{ asset('bundles/egovmainbundle/img/loader.gif') }}" align="absmiddle">&nbsp;Enregistrement...');
+            $.ajax({
+                    type: "POST",
+                    url: "{{path('auto_update')}}",
+                    data: $('#form').serialize(),
+                    success: function (data){
+                        $('#myModal').modal('hide');
+                        $('#loading').html("");
+                        $(current_item).data("id",$("#ipt-id").val());
+                        $(current_item).data("etat",$("#ipt-etat").val());
+                        $(current_item).data("commentaire",$("#ipt-comm").val());
+                        current_item = null;
+                    },
+                    error: function (e) {
+                         console.log(e.responseText);
+                         $('#loading').html("");
+                         current_item=null;
+                    }
+              });
+        });
+    });
+</script>    
+    {% endblock %}

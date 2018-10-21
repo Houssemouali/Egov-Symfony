@@ -1,0 +1,81 @@
+<?php
+
+namespace Egov\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Extraitnaissances
+ *
+ * @ORM\Table(name="extraitnaissances")
+ * @ORM\Entity
+ */
+class Extraitnaissances
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=50, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexe", type="string", length=10, nullable=false)
+     */
+    private $sexe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville_naissance", type="string", length=50, nullable=false)
+     */
+    private $villeNaissance;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_naissance", type="date", nullable=false)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pere", type="string", length=50, nullable=true)
+     */
+    private $pere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mere", type="string", length=50, nullable=true)
+     */
+    private $mere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_civile", type="string", length=50, nullable=false)
+     */
+    private $etatCivile;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
